@@ -2,6 +2,8 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BusinessAnalyticsDashboard.SalesAnalyticsPage"
+             xmlns:local="clr-namespace:BusinessAnalyticsDashboard"
+             x:DataType="local:SalesAnalyticsViewModel"
              xmlns:syncfusion="http://schemas.syncfusion.com/maui/toolkit">
     <syncfusion:SfPullToRefresh x:Name="pullToRefresh"
                                    RefreshCommand="{Binding RefreshCommand}"

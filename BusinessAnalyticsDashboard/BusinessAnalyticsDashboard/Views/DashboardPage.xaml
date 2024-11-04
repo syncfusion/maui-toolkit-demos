@@ -2,6 +2,8 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BusinessAnalyticsDashboard.DashboardPage"
+             xmlns:local="clr-namespace:BusinessAnalyticsDashboard"
+             x:DataType="local:DashboardViewModel"
              xmlns:syncfusion="http://schemas.syncfusion.com/maui/toolkit">
     <ScrollView>
         <VerticalStackLayout Padding="15" Spacing="15">
