@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="http://schemas.syncfusion.com/maui/toolkit"
+             x:Class="BusinessAnalyticsDashboard.SettingsPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="15" Spacing="15">
+            <!-- Profile Settings -->
+            <Border Stroke="#EAEAEA"
+                    StrokeShape="RoundRectangle 10"
+                    BackgroundColor="White"
+                    Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
+                <VerticalStackLayout Padding="15" Spacing="10">
+                    <Label Text="Profile Settings" 
+                           FontSize="16" 
+                           FontAttributes="Bold"/>
+
+                    <Grid RowDefinitions="Auto,Auto,Auto" 
+                          ColumnDefinitions="Auto,*" 
+                          RowSpacing="15" 
+                          ColumnSpacing="15">
+
+                        <Label Text="Name:" 
+                               Grid.Row="0" 
+                               Grid.Column="0" 
+                               VerticalOptions="Center"/>
+
+                        <syncfusion:SfTextInputLayout Hint="Enter your name"
+                                                      Grid.Row="0" 
+Grid.Column="1">
+                            <Entry Text="{Binding UserName}" 
+                               />
+                        </syncfusion:SfTextInputLayout>
+
+                        <Label Text="Email:" 
+                               Grid.Row="1" 
+                               Grid.Column="0" 
+                               VerticalOptions="Center"/>
+
+                        <syncfusion:SfTextInputLayout Hint="Enter your email"
+                                                      Grid.Row="1" 
+Grid.Column="1">
+                            <Entry Text="{Binding UserEmail}" 
+                               />
+                        </syncfusion:SfTextInputLayout>
+
+                        <Label Text="Role:" 
+                               Grid.Row="2" 
+                               Grid.Column="0" 
+                               VerticalOptions="Center"/>
+
+                        <syncfusion:SfTextInputLayout Hint="Enter your role"
+                                                      Grid.Row="2" 
+Grid.Column="1">
+                            <Entry Text="{Binding UserRole}" 
+                               />
+                        </syncfusion:SfTextInputLayout>
+
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Display Settings -->
+            <Border Stroke="#EAEAEA"
+                    StrokeShape="RoundRectangle 10"
+                    BackgroundColor="White"
+                    Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
+                <VerticalStackLayout Padding="15" Spacing="10">
+                    <Label Text="Display Settings" 
+                           FontSize="16" 
+                           FontAttributes="Bold"/>
+
+                    <Grid RowDefinitions="Auto,Auto,Auto" 
+                          ColumnDefinitions="*,Auto" 
+                          RowSpacing="15" 
+                          ColumnSpacing="15">
+
+                        <Label Text="Show Data Labels" 
+                               Grid.Row="0" 
+                               Grid.Column="0" 
+                               VerticalOptions="Center"/>
+                        <Switch IsToggled="{Binding ShowDataLabels}" 
+                                Grid.Row="0" 
+                                Grid.Column="1"
+                                OnColor="{StaticResource Primary}"/>
+
+                        <Label Text="Enable Animations" 
+                               Grid.Row="1" 
+                               Grid.Column="0" 
+                               VerticalOptions="Center"/>
+                        <Switch IsToggled="{Binding EnableAnimations}" 
+                                Grid.Row="1" 
+                                Grid.Column="1"
+                                OnColor="{StaticResource Primary}"/>
+
+                        <Label Text="Dark Mode" 
+                               Grid.Row="2" 
+                               Grid.Column="0" 
+                               VerticalOptions="Center"/>
+                        <Switch IsToggled="{Binding DarkMode}" 
+                                Grid.Row="2" 
+                                Grid.Column="1"
+                                OnColor="{StaticResource Primary}"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Notification Settings -->
+            <Border Stroke="#EAEAEA"
+                    StrokeShape="RoundRectangle 10"
+                    BackgroundColor="White"
+                    Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
+                <VerticalStackLayout Padding="15" Spacing="10">
+                    <Label Text="Notification Settings" 
+                           FontSize="16" 
+                           FontAttributes="Bold"/>
+
+                    <Grid RowDefinitions="Auto,Auto,Auto" 
+                          ColumnDefinitions="*,Auto" 
+                          RowSpacing="15" 
+                          ColumnSpacing="15">
+
+                        <Label Text="Email Notifications" 
+                               Grid.Row="0" 
+                               Grid.Column="0" 
+                               VerticalOptions="Center"/>
+                        <Switch IsToggled="{Binding EmailNotifications}" 
+                                Grid.Row="0" 
+                                Grid.Column="1"
+                                OnColor="{StaticResource Primary}"/>
+
+                        <Label Text="Performance Alerts" 
+                               Grid.Row="1" 
+                               Grid.Column="0" 
+                               VerticalOptions="Center"/>
+                        <Switch IsToggled="{Binding PerformanceAlerts}" 
+                                Grid.Row="1" 
+                                Grid.Column="1"
+                                OnColor="{StaticResource Primary}"/>
+
+                        <Label Text="Weekly Reports" 
+                               Grid.Row="2" 
+                               Grid.Column="0" 
+                               VerticalOptions="Center"/>
+                        <Switch IsToggled="{Binding WeeklyReports}" 
+                                Grid.Row="2" 
+                                Grid.Column="1"
+                                OnColor="{StaticResource Primary}"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Data Settings -->
+            <Border Stroke="#EAEAEA"
+                    StrokeShape="RoundRectangle 10"
+                    BackgroundColor="White"
+                    Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
+                <VerticalStackLayout Padding="15" Spacing="10">
+                    <Label Text="Data Settings" 
+                           FontSize="16" 
+                           FontAttributes="Bold"/>
+
+                    <Grid RowDefinitions="Auto,Auto" 
+                          ColumnDefinitions="*,Auto" 
+                          RowSpacing="15" 
+                          ColumnSpacing="15">
+
+                        <Label Text="Default Time Period" 
+                               Grid.Row="0" 
+                               Grid.Column="0" 
+                               VerticalOptions="Center"/>
+                        <Picker SelectedIndex="{Binding DefaultTimePeriod}" 
+                                Grid.Row="0" 
+                                Grid.Column="1"
+                                WidthRequest="150">
+                            <Picker.Items>
+                                <x:String>Last 7 Days</x:String>
+                                <x:String>Last 30 Days</x:String>
+                                <x:String>Last 90 Days</x:String>
+                                <x:String>Last Year</x:String>
+                            </Picker.Items>
+                        </Picker>
+
+                        <Label Text="Auto Refresh Interval" 
+                               Grid.Row="1" 
+                               Grid.Column="0" 
+                               VerticalOptions="Center"/>
+                        <Picker SelectedIndex="{Binding AutoRefreshInterval}" 
+                                Grid.Row="1" 
+                                Grid.Column="1"
+                                WidthRequest="150">
+                            <Picker.Items>
+                                <x:String>5 Minutes</x:String>
+                                <x:String>15 Minutes</x:String>
+                                <x:String>30 Minutes</x:String>
+                                <x:String>1 Hour</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Save Button -->
+            <Button Text="Save Changes"
+                    Command="{Binding SaveCommand}"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White"
+                    HeightRequest="50"
+                    CornerRadius="25"
+                    Margin="0,15,0,30"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentView>

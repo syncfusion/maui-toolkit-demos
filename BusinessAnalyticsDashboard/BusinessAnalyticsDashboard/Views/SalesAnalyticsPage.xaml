@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BusinessAnalyticsDashboard.SalesAnalyticsPage"
+             xmlns:syncfusion="http://schemas.syncfusion.com/maui/toolkit">
+    <syncfusion:SfPullToRefresh x:Name="pullToRefresh"
+                                   RefreshCommand="{Binding RefreshCommand}"
+                                   IsRefreshing="{Binding IsRefreshing}">
+        <syncfusion:SfPullToRefresh.PullableContent>
+            <ScrollView>
+                <VerticalStackLayout Padding="15" Spacing="15">
+                    <!-- Time Period Selector -->
+                    <Border Stroke="#EAEAEA"
+                        StrokeShape="RoundRectangle 10"
+                        BackgroundColor="White"
+                        Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
+                        <HorizontalStackLayout Padding="15" Spacing="10">
+                            <Label Text="Time Period:" 
+                               VerticalOptions="Center"/>
+                            <Picker x:Name="periodPicker"
+                                SelectedIndex="{Binding SelectedPeriodIndex}"
+                                WidthRequest="150">
+                                <Picker.Items>
+                                    <x:String>Last 7 Days</x:String>
+                                    <x:String>Last 30 Days</x:String>
+                                    <x:String>Last 90 Days</x:String>
+                                    <x:String>Last Year</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </HorizontalStackLayout>
+                    </Border>
+
+                    <!-- Sales by Category with Shimmer -->
+                    <Border Stroke="#EAEAEA"
+                        StrokeShape="RoundRectangle 10"
+                        BackgroundColor="White"
+                        Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
+                        <Grid>
+                            <VerticalStackLayout Padding="15">
+                                <Label Text="Sales by Category" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   Margin="0,0,0,10"/>
+                                <syncfusion:SfCartesianChart HeightRequest="250">
+                                    <syncfusion:SfCartesianChart.XAxes>
+                                        <syncfusion:CategoryAxis>
+                                            <syncfusion:CategoryAxis.Title>
+                                                <syncfusion:ChartAxisTitle Text="Category"/>
+                                            </syncfusion:CategoryAxis.Title>
+                                        </syncfusion:CategoryAxis>
+                                    </syncfusion:SfCartesianChart.XAxes>
+                                    <syncfusion:SfCartesianChart.YAxes>
+                                        <syncfusion:NumericalAxis>
+                                            <syncfusion:NumericalAxis.Title>
+                                                <syncfusion:ChartAxisTitle Text="Sales ($)"/>
+                                            </syncfusion:NumericalAxis.Title>
+                                        </syncfusion:NumericalAxis>
+                                    </syncfusion:SfCartesianChart.YAxes>
+                                    <syncfusion:SfCartesianChart.Series>
+                                        <syncfusion:ColumnSeries ItemsSource="{Binding CategorySales}"
+                                                      XBindingPath="Category"
+                                                      YBindingPath="Value"
+                                                      ShowDataLabels="True">
+                                        </syncfusion:ColumnSeries>
+                                    </syncfusion:SfCartesianChart.Series>
+                                </syncfusion:SfCartesianChart>
+                            </VerticalStackLayout>
+
+                            <syncfusion:SfShimmer Type="Feed" IsVisible="{Binding IsLoading}"
+                                          IsActive="{Binding IsLoading}"
+                                          HeightRequest="285"/>
+                        </Grid>
+                    </Border>
+
+                    <!-- Current vs Previous Period Comparison with Shimmer -->
+                    <Border Stroke="#EAEAEA"
+                        StrokeShape="RoundRectangle 10"
+                        BackgroundColor="White"
+                        Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
+                        <Grid>
+                            <VerticalStackLayout Padding="15" >
+                                <Label Text="Current vs Previous Period" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   Margin="0,0,0,10"/>
+                                <syncfusion:SfCartesianChart HeightRequest="250">
+                                    <syncfusion:SfCartesianChart.Legend>
+                                        <syncfusion:ChartLegend/>
+                                    </syncfusion:SfCartesianChart.Legend>
+                                    <syncfusion:SfCartesianChart.XAxes>
+                                        <syncfusion:CategoryAxis>
+                                            <syncfusion:CategoryAxis.Title>
+                                                <syncfusion:ChartAxisTitle Text="Date"/>
+                                            </syncfusion:CategoryAxis.Title>
+                                        </syncfusion:CategoryAxis>
+                                    </syncfusion:SfCartesianChart.XAxes>
+                                    <syncfusion:SfCartesianChart.YAxes>
+                                        <syncfusion:NumericalAxis>
+                                            <syncfusion:NumericalAxis.Title>
+                                                <syncfusion:ChartAxisTitle Text="Sales ($)"/>
+                                            </syncfusion:NumericalAxis.Title>
+                                        </syncfusion:NumericalAxis>
+                                    </syncfusion:SfCartesianChart.YAxes>
+                                    <syncfusion:SfCartesianChart.Series>
+                                        <syncfusion:LineSeries ItemsSource="{Binding CurrentPeriodSales}"
+                                                    XBindingPath="Date"
+                                                    YBindingPath="Value"
+                                                    Label="Current Period"/>
+                                        <syncfusion:LineSeries ItemsSource="{Binding PreviousPeriodSales}"
+                                                    XBindingPath="Date"
+                                                    YBindingPath="Value"
+                                                    Label="Previous Period"/>
+                                    </syncfusion:SfCartesianChart.Series>
+                                </syncfusion:SfCartesianChart>
+                            </VerticalStackLayout>
+
+                            <syncfusion:SfShimmer Type="Feed" IsVisible="{Binding IsLoading}"
+                                          IsActive="{Binding IsLoading}"
+                                          HeightRequest="285"/>
+                        </Grid>
+                    </Border>
+
+                    <!-- Sales Distribution with Shimmer -->
+                    <Border Stroke="#EAEAEA"
+                        StrokeShape="RoundRectangle 10"
+                        BackgroundColor="White"
+                        Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
+                        <Grid>
+                            <VerticalStackLayout Padding="15" >
+                                <Label Text="Sales Distribution by Region" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   Margin="0,0,0,10"/>
+                                <syncfusion:SfCircularChart HeightRequest="300">
+                                    <syncfusion:SfCircularChart.Legend>
+                                        <syncfusion:ChartLegend/>
+                                    </syncfusion:SfCircularChart.Legend>
+                                    <syncfusion:SfCircularChart.Series>
+                                        <syncfusion:PieSeries ItemsSource="{Binding RegionalSales}"
+                                                   XBindingPath="Region"
+                                                   YBindingPath="Value"
+                                                   ShowDataLabels="True">
+                                        </syncfusion:PieSeries>
+                                    </syncfusion:SfCircularChart.Series>
+                                </syncfusion:SfCircularChart>
+                            </VerticalStackLayout>
+
+                            <syncfusion:SfShimmer Type="CirclePersona" IsVisible="{Binding IsLoading}"
+                                          IsActive="{Binding IsLoading}"
+                                          HeightRequest="335"/>
+                        </Grid>
+                    </Border>
+
+                    <!-- Product Performance with Shimmer -->
+                    <Border Stroke="#EAEAEA"
+                        StrokeShape="RoundRectangle 10"
+                        BackgroundColor="White"
+                        Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
+                        <Grid>
+                            <VerticalStackLayout Padding="15" >
+                                <Label Text="Product Performance" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   Margin="0,0,0,10"/>
+                                <syncfusion:SfCartesianChart HeightRequest="250">
+                                    <syncfusion:SfCartesianChart.XAxes>
+                                        <syncfusion:CategoryAxis>
+                                            <syncfusion:CategoryAxis.Title>
+                                                <syncfusion:ChartAxisTitle Text="Product"/>
+                                            </syncfusion:CategoryAxis.Title>
+                                        </syncfusion:CategoryAxis>
+                                    </syncfusion:SfCartesianChart.XAxes>
+                                    <syncfusion:SfCartesianChart.YAxes>
+                                        <syncfusion:NumericalAxis>
+                                            <syncfusion:NumericalAxis.Title>
+                                                <syncfusion:ChartAxisTitle Text="Revenue"/>
+                                            </syncfusion:NumericalAxis.Title>
+                                        </syncfusion:NumericalAxis>
+                                    </syncfusion:SfCartesianChart.YAxes>
+                                    <syncfusion:SfCartesianChart.Series>
+                                        <syncfusion:SplineAreaSeries ItemsSource="{Binding ProductPerformance}"
+                                                          XBindingPath="Product"
+                                                          YBindingPath="Revenue"
+                                                          Opacity="0.6"/>
+                                    </syncfusion:SfCartesianChart.Series>
+                                </syncfusion:SfCartesianChart>
+                            </VerticalStackLayout>
+
+                            <syncfusion:SfShimmer Type="Article" IsVisible="{Binding IsLoading}"
+                                          IsActive="{Binding IsLoading}"
+                                          HeightRequest="285"/>
+                        </Grid>
+                    </Border>
+                </VerticalStackLayout>
+            </ScrollView>
+        </syncfusion:SfPullToRefresh.PullableContent>
+    </syncfusion:SfPullToRefresh>
+</ContentView>

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="http://schemas.syncfusion.com/maui/toolkit"
+             x:Class="BusinessAnalyticsDashboard.MainPage">
+
+    <syncfusion:SfNavigationDrawer x:Name="navigationDrawer">
+        <syncfusion:SfNavigationDrawer.DrawerSettings>
+            <syncfusion:DrawerSettings DrawerHeaderHeight="160">
+                <syncfusion:DrawerSettings.DrawerHeaderView>
+                    <Grid BackgroundColor="#512BD4" HeightRequest="160">
+                        <VerticalStackLayout Padding="20">
+                            <Border StrokeShape="RoundRectangle 25"
+                            HeightRequest="70" 
+                            WidthRequest="70" 
+                            Stroke="White"
+                            StrokeThickness="1">
+                                <Image Source="alexandar.png" 
+                               Aspect="AspectFill"/>
+                            </Border>
+                            <Label Text="John Doe" HorizontalTextAlignment="Center"
+                           TextColor="White" 
+                           FontSize="20" 
+                           Margin="0,10,0,0"/>
+                            <Label Text="Administrator"  HorizontalTextAlignment="Center"
+                           TextColor="White" 
+                           FontSize="14" 
+                           Opacity="0.8"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </syncfusion:DrawerSettings.DrawerHeaderView>
+
+                <syncfusion:DrawerSettings.DrawerContentView>
+                    <ScrollView>
+                        <VerticalStackLayout >
+                            <!-- Menu Items -->
+                            <syncfusion:SfEffectsView Padding="15" 
+                                                      HeightRequest="50">
+                                <Label Text="Dashboard" 
+                                   VerticalOptions="Center"/>
+                                <syncfusion:SfEffectsView.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding NavigateCommand}" 
+                                                      CommandParameter="Dashboard"/>
+                                </syncfusion:SfEffectsView.GestureRecognizers>
+                            </syncfusion:SfEffectsView>
+
+                            <syncfusion:SfEffectsView Padding="15" 
+                                                      HeightRequest="50">
+                                <Label Text="Sales Analytics" 
+                                   VerticalOptions="Center"/>
+                                <syncfusion:SfEffectsView.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding NavigateCommand}" 
+                                                      CommandParameter="SalesAnalytics"/>
+                                </syncfusion:SfEffectsView.GestureRecognizers>
+                            </syncfusion:SfEffectsView>
+
+                            <syncfusion:SfEffectsView Padding="15" 
+                                                      HeightRequest="50">
+                                <Label Text="Customer Insights" 
+                                   VerticalOptions="Center"/>
+                                <syncfusion:SfEffectsView.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding NavigateCommand}" 
+                                                      CommandParameter="CustomerInsights"/>
+                                </syncfusion:SfEffectsView.GestureRecognizers>
+                            </syncfusion:SfEffectsView>
+
+                            <syncfusion:SfEffectsView Padding="15" 
+                                                      HeightRequest="50">
+                                <Label Text="Product Performance" 
+                                   VerticalOptions="Center"/>
+                                <syncfusion:SfEffectsView.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding NavigateCommand}" 
+                                                      CommandParameter="ProductPerformance"/>
+                                </syncfusion:SfEffectsView.GestureRecognizers>
+                            </syncfusion:SfEffectsView>
+
+                            <syncfusion:SfEffectsView Padding="15" 
+                                                      HeightRequest="50">
+                                <Label Text="Team Metrics" 
+                                   VerticalOptions="Center"/>
+                                <syncfusion:SfEffectsView.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding NavigateCommand}" 
+                                                      CommandParameter="TeamMetrics"/>
+                                </syncfusion:SfEffectsView.GestureRecognizers>
+                            </syncfusion:SfEffectsView>
+
+                            <BoxView HeightRequest="1" 
+                                Color="Gray" 
+                                Opacity="0.3" 
+                                Margin="0,10"/>
+
+                            <syncfusion:SfEffectsView Padding="15" 
+                                                      HeightRequest="50">
+                                <Label Text="Settings" 
+                                   VerticalOptions="Center"/>
+                                <syncfusion:SfEffectsView.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding NavigateCommand}" 
+                                                      CommandParameter="Settings"/>
+                                </syncfusion:SfEffectsView.GestureRecognizers>
+                            </syncfusion:SfEffectsView>
+                        </VerticalStackLayout>
+                    </ScrollView>
+                </syncfusion:DrawerSettings.DrawerContentView>
+            </syncfusion:DrawerSettings>
+        </syncfusion:SfNavigationDrawer.DrawerSettings>
+        <syncfusion:SfNavigationDrawer.ContentView>
+            <Grid>
+                <Grid RowDefinitions="Auto,*">
+                    <Grid BackgroundColor="#512BD4" 
+                              HeightRequest="60" 
+                              ColumnDefinitions="Auto,*">
+                        <Button Text="☰" 
+                                    FontSize="20" 
+                                    BackgroundColor="Transparent" 
+                                    TextColor="White"
+                                    Clicked="OnMenuButtonClicked"/>
+                        <Label Text="{Binding CurrentPage}" 
+                                   Grid.Column="1" 
+                                   TextColor="White" 
+                                   VerticalOptions="Center" 
+                                   FontSize="20"/>
+                    </Grid>
+                    <ContentView Grid.Row="1" 
+                                    Content="{Binding CurrentPageContent}"/>
+                </Grid>
+            </Grid>
+        </syncfusion:SfNavigationDrawer.ContentView>
+    </syncfusion:SfNavigationDrawer>
+
+</ContentPage>
