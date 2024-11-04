@@ -6,11 +6,8 @@
     <ScrollView>
         <VerticalStackLayout Padding="15" Spacing="15">
             <!-- Time Period Selector -->
-            <Border Stroke="#EAEAEA"
-                    StrokeShape="RoundRectangle 10"
-                    BackgroundColor="White"
-                    Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
-                <syncfusion:SfSegmentedControl x:Name="timeSegmentedControl"
+
+            <syncfusion:SfSegmentedControl x:Name="timeSegmentedControl"
                                ItemsSource="{Binding TimePeriods}"
                                SelectedIndex="{Binding SelectedTimePeriodIndex}"
                                SelectionChanged="OnTimePeriodChanged"
@@ -18,11 +15,10 @@
                                CornerRadius="8"
                                Margin="15"
                                >
-                    <syncfusion:SfSegmentedControl.SelectionIndicatorSettings>
-                        <syncfusion:SelectionIndicatorSettings Background="{StaticResource Primary}"/>
-                    </syncfusion:SfSegmentedControl.SelectionIndicatorSettings>
-                </syncfusion:SfSegmentedControl>
-            </Border>
+                <syncfusion:SfSegmentedControl.SelectionIndicatorSettings>
+                    <syncfusion:SelectionIndicatorSettings Background="{StaticResource Primary}"/>
+                </syncfusion:SfSegmentedControl.SelectionIndicatorSettings>
+            </syncfusion:SfSegmentedControl>
 
             <!-- Top Performing Products Carousel -->
             <Border Stroke="#EAEAEA"

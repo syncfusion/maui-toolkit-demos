@@ -50,10 +50,10 @@ namespace BusinessAnalyticsDashboard
             CurrentPageContent = page switch
             {
                 "Dashboard" => new DashboardPage(),
-                "SalesAnalytics" => new SalesAnalyticsPage(),
-                "CustomerInsights" => new CustomerInsightsPage(),
-                "ProductPerformance" => new ProductPerformancePage(),
-                "TeamMetrics" => new TeamMetricsPage(),
+                "Sales Analytics" => new SalesAnalyticsPage(),
+                "Customer Insights" => new CustomerInsightsPage(),
+                "Product Performance" => new ProductPerformancePage(),
+                "Team Metrics" => new TeamMetricsPage(),
                 "Settings" => new SettingsPage(),
                 _ => new DashboardPage()
             };

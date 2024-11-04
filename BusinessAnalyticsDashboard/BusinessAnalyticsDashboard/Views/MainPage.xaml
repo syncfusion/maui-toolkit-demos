@@ -50,7 +50,7 @@
                                    VerticalOptions="Center"/>
                                 <syncfusion:SfEffectsView.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding NavigateCommand}" 
-                                                      CommandParameter="SalesAnalytics"/>
+                                                      CommandParameter="Sales Analytics"/>
                                 </syncfusion:SfEffectsView.GestureRecognizers>
                             </syncfusion:SfEffectsView>
 
@@ -60,7 +60,7 @@
                                    VerticalOptions="Center"/>
                                 <syncfusion:SfEffectsView.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding NavigateCommand}" 
-                                                      CommandParameter="CustomerInsights"/>
+                                                      CommandParameter="Customer Insights"/>
                                 </syncfusion:SfEffectsView.GestureRecognizers>
                             </syncfusion:SfEffectsView>
 
@@ -70,7 +70,7 @@
                                    VerticalOptions="Center"/>
                                 <syncfusion:SfEffectsView.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding NavigateCommand}" 
-                                                      CommandParameter="ProductPerformance"/>
+                                                      CommandParameter="Product Performance"/>
                                 </syncfusion:SfEffectsView.GestureRecognizers>
                             </syncfusion:SfEffectsView>
 
@@ -80,7 +80,7 @@
                                    VerticalOptions="Center"/>
                                 <syncfusion:SfEffectsView.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding NavigateCommand}" 
-                                                      CommandParameter="TeamMetrics"/>
+                                                      CommandParameter="Team Metrics"/>
                                 </syncfusion:SfEffectsView.GestureRecognizers>
                             </syncfusion:SfEffectsView>
 

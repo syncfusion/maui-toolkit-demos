@@ -26,8 +26,7 @@
             </Border>
 
             <!-- Team Members Performance -->
-            <syncfusion:SfEffectsView TouchDownEffects="Scale"
-                                  TouchUpEffects="Ripple"
+            <syncfusion:SfEffectsView TouchDownEffects="Ripple"
                                   RippleBackground="Gray">
                 <Border Stroke="#EAEAEA"
                         StrokeShape="RoundRectangle 10"
