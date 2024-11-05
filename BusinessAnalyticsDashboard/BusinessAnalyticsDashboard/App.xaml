@@ -16,6 +16,7 @@
             <converters:AchievementTypeColorConverter x:Key="AchievementTypeColorConverter"/>
             <converters:AchievementIconConverter x:Key="AchievementIconConverter"/>
             <converters:AchievementIconBackgroundConverter x:Key="AchievementIconBackgroundConverter"/>
+            <converters:AchievementStrokeConverter x:Key="AchievementStrokeConverter"/>
             <converters:AchievementRippleColorConverter x:Key="AchievementRippleColorConverter"/>
             <converters:AchievementHighlightColorConverter x:Key="AchievementHighlightColorConverter"/>
         </ResourceDictionary>
