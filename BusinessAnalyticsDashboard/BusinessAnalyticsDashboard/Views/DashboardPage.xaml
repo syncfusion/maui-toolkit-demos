@@ -37,7 +37,7 @@
                         BackgroundColor="White"
                         Padding="0"
                         Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
-                    <VerticalStackLayout Padding="15">
+                    <VerticalStackLayout Padding="15" VerticalOptions="Center">
                         <Label Text="Revenue" 
                                TextColor="Gray" 
                                FontSize="14"/>
@@ -58,7 +58,7 @@
                         StrokeShape="RoundRectangle 10"
                         BackgroundColor="White"
                         Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
-                    <VerticalStackLayout Padding="15">
+                    <VerticalStackLayout Padding="15" VerticalOptions="Center">
                         <Label Text="Orders" 
                                TextColor="Gray" 
                                FontSize="14"/>
@@ -79,7 +79,7 @@
                         StrokeShape="RoundRectangle 10"
                         BackgroundColor="White"
                         Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
-                    <VerticalStackLayout Padding="15">
+                    <VerticalStackLayout Padding="15" VerticalOptions="Center">
                         <Label Text="Customers" 
                                TextColor="Gray" 
                                FontSize="14"/>
@@ -100,7 +100,7 @@
                         StrokeShape="RoundRectangle 10"
                         BackgroundColor="White"
                         Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
-                    <VerticalStackLayout Padding="15">
+                    <VerticalStackLayout Padding="15" VerticalOptions="Center">
                         <Label Text="Conversion Rate" 
                                TextColor="Gray" 
                                FontSize="14"/>
