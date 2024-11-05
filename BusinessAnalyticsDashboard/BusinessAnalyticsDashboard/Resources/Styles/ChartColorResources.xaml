@@ -14,10 +14,10 @@
     </local:ChartColorModel>
 
     <local:ChartColorModel x:Key="PaletteBrushesLight2">
-        <SolidColorBrush>#9E77ED</SolidColorBrush>
-        <SolidColorBrush>#F4EBFF</SolidColorBrush>
-        <SolidColorBrush>#B692F6</SolidColorBrush>
         <SolidColorBrush>#7F56D9</SolidColorBrush>
+        <SolidColorBrush>#9E77ED</SolidColorBrush>
+        <SolidColorBrush>#B692F6</SolidColorBrush>
+        <SolidColorBrush>#EAECF0</SolidColorBrush>
     </local:ChartColorModel>
 
 

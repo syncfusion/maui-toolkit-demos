@@ -52,12 +52,12 @@ namespace BusinessAnalyticsDashboard
             // Sample revenue data
             RevenueData = new List<Model>
             {
-                new Model { Month = "Jan", Value = 180000 },
-                new Model { Month = "Feb", Value = 190000 },
-                new Model { Month = "Mar", Value = 185000 },
-                new Model { Month = "Apr", Value = 195000 },
-                new Model { Month = "May", Value = 220000 },
-                new Model { Month = "Jun", Value = 245500 }
+                new Model { Month = "Jan", Value = 1.8 },
+                new Model { Month = "Feb", Value = 1.9 },
+                new Model { Month = "Mar", Value = 1.85 },
+                new Model { Month = "Apr", Value = 1.95 },
+                new Model { Month = "May", Value = 2.2 },
+                new Model { Month = "Jun", Value = 2.45 }
             };
 
             // Sample sales target progress
