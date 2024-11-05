@@ -8,25 +8,25 @@
 
     <syncfusion:SfNavigationDrawer x:Name="navigationDrawer">
         <syncfusion:SfNavigationDrawer.DrawerSettings>
-            <syncfusion:DrawerSettings DrawerHeaderHeight="160">
+            <syncfusion:DrawerSettings DrawerHeaderHeight="154" DrawerWidth="273">
                 <syncfusion:DrawerSettings.DrawerHeaderView>
-                    <Grid BackgroundColor="#512BD4" HeightRequest="160">
+                    <Grid BackgroundColor="#512BD4" HeightRequest="154" WidthRequest="273">
                         <VerticalStackLayout Padding="20">
-                            <Border StrokeShape="RoundRectangle 25"
-                            HeightRequest="70" 
-                            WidthRequest="70" 
-                            Stroke="White"
+                            <Border StrokeShape="RoundRectangle 32"
+                            HeightRequest="64" 
+                            WidthRequest="64" 
+                                    BackgroundColor="#FFFFFF"
+                            Stroke="#FFFFFF"
                             StrokeThickness="1">
-                                <Image Source="alexandar.png" 
-                               Aspect="AspectFill"/>
+                                <Label Text="JD" HorizontalOptions="Center" FontSize="23" FontAttributes="Bold" VerticalOptions="Center"/>
                             </Border>
                             <Label Text="John Doe" HorizontalTextAlignment="Center"
-                           TextColor="White" 
+                           TextColor="#FFFFFF" 
                            FontSize="20" 
                            Margin="0,10,0,0"/>
                             <Label Text="Administrator"  HorizontalTextAlignment="Center"
-                           TextColor="White" 
-                           FontSize="14" 
+                           TextColor="#FFFFFF" 
+                           FontSize="16" 
                            Opacity="0.8"/>
                         </VerticalStackLayout>
                     </Grid>
@@ -34,10 +34,10 @@
 
                 <syncfusion:DrawerSettings.DrawerContentView>
                     <ScrollView>
-                        <VerticalStackLayout >
+                        <VerticalStackLayout Padding="10,0,0,0" >
                             <!-- Menu Items -->
-                            <syncfusion:SfEffectsView Padding="15" 
-                                                      HeightRequest="50">
+                            <syncfusion:SfEffectsView  Padding="10,1,0,1"  SelectionBackground="#EAECF0"
+                                                      HeightRequest="40">
                                 <Label Text="Dashboard" 
                                    VerticalOptions="Center"/>
                                 <syncfusion:SfEffectsView.GestureRecognizers>
@@ -46,8 +46,8 @@
                                 </syncfusion:SfEffectsView.GestureRecognizers>
                             </syncfusion:SfEffectsView>
 
-                            <syncfusion:SfEffectsView Padding="15" 
-                                                      HeightRequest="50">
+                            <syncfusion:SfEffectsView Padding="10,1,0,1" SelectionBackground="#EAECF0"
+                                                      HeightRequest="40">
                                 <Label Text="Sales Analytics" 
                                    VerticalOptions="Center"/>
                                 <syncfusion:SfEffectsView.GestureRecognizers>
@@ -56,8 +56,8 @@
                                 </syncfusion:SfEffectsView.GestureRecognizers>
                             </syncfusion:SfEffectsView>
 
-                            <syncfusion:SfEffectsView Padding="15" 
-                                                      HeightRequest="50">
+                            <syncfusion:SfEffectsView Padding="10,1,0,1" SelectionBackground="#EAECF0"
+                                                      HeightRequest="40">
                                 <Label Text="Customer Insights" 
                                    VerticalOptions="Center"/>
                                 <syncfusion:SfEffectsView.GestureRecognizers>
@@ -66,8 +66,8 @@
                                 </syncfusion:SfEffectsView.GestureRecognizers>
                             </syncfusion:SfEffectsView>
 
-                            <syncfusion:SfEffectsView Padding="15" 
-                                                      HeightRequest="50">
+                            <syncfusion:SfEffectsView  Padding="10,1,0,1" SelectionBackground="#EAECF0"
+                                                      HeightRequest="40">
                                 <Label Text="Product Performance" 
                                    VerticalOptions="Center"/>
                                 <syncfusion:SfEffectsView.GestureRecognizers>
@@ -76,8 +76,8 @@
                                 </syncfusion:SfEffectsView.GestureRecognizers>
                             </syncfusion:SfEffectsView>
 
-                            <syncfusion:SfEffectsView Padding="15" 
-                                                      HeightRequest="50">
+                            <syncfusion:SfEffectsView Padding="10,1,0,1" SelectionBackground="#EAECF0"
+                                                      HeightRequest="40">
                                 <Label Text="Team Metrics" 
                                    VerticalOptions="Center"/>
                                 <syncfusion:SfEffectsView.GestureRecognizers>
@@ -91,8 +91,8 @@
                                 Opacity="0.3" 
                                 Margin="0,10"/>
 
-                            <syncfusion:SfEffectsView Padding="15" 
-                                                      HeightRequest="50">
+                            <syncfusion:SfEffectsView Padding="10,1,0,1" SelectionBackground="#EAECF0"
+                                                      HeightRequest="40">
                                 <Label Text="Settings" 
                                    VerticalOptions="Center"/>
                                 <syncfusion:SfEffectsView.GestureRecognizers>
@@ -114,11 +114,11 @@
                         <Button Text="☰" 
                                     FontSize="20" 
                                     BackgroundColor="Transparent" 
-                                    TextColor="White"
+                                    TextColor="#FFFFFF"
                                     Clicked="OnMenuButtonClicked"/>
                         <Label Text="{Binding CurrentPage}" 
                                    Grid.Column="1" 
-                                   TextColor="White" 
+                                   TextColor="#FFFFFF" 
                                    VerticalOptions="Center" 
                                    FontSize="20"/>
                     </Grid>
