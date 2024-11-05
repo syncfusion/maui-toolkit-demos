@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:syncfusion="http://schemas.syncfusion.com/maui/toolkit"
+             xmlns:syncfusion="http://schemas.syncfusion.com/maui/toolkit"             
              xmlns:local="clr-namespace:BusinessAnalyticsDashboard"
              x:DataType="local:CustomerInsightsViewModel"
              x:Class="BusinessAnalyticsDashboard.CustomerInsightsPage">
     <Grid RowDefinitions="Auto,*">
+        <Grid.Resources>           
+            <Style TargetType="syncfusion:SfTabItem">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup>
+                            <VisualState x:Name="Normal" >
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="#667085" />                                   
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="#6941c6" />                                  
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </Grid.Resources>
         <!-- Filter Chips -->
         <syncfusion:SfChipGroup x:Name="filterChips"
                           ChipType="Choice"
@@ -16,19 +36,23 @@
                           Margin="15,10"
                           Grid.Row="0">
         </syncfusion:SfChipGroup>
-
+        
         <!-- Tab View -->
-        <syncfusion:SfTabView Grid.Row="1" 
-                          IndicatorBackground="{StaticResource Primary}">
-            <syncfusion:SfTabView.Items>
+        <syncfusion:SfTabView x:Name="tabView"
+                          Grid.Row="1"
+                          TabWidthMode="SizeToContent"                           
+                          IndicatorBackground="#6941c6"
+                          IndicatorWidthMode="Fit">
+            <syncfusion:SfTabView.Items >
                 <!-- Demographics Tab -->
                 <syncfusion:SfTabItem Header="Demographics">
                     <syncfusion:SfTabItem.Content>
-                        <ScrollView>
-                            <VerticalStackLayout Padding="15" Spacing="15">
+                        <ScrollView Orientation="Both">
+                            <StackLayout Padding="15" Spacing="15"
+                                         Orientation="{OnPlatform WinUI=Horizontal,MacCatalyst=Horizontal,Default=Vertical}">
                                 <!-- Age Distribution -->
                                 <Border Stroke="#EAEAEA"
-                                        StrokeShape="RoundRectangle 10"
+                                        StrokeShape="RoundRectangle 10"                                       
                                         BackgroundColor="White"
                                         Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
                                     <VerticalStackLayout Padding="15">
@@ -38,7 +62,7 @@
                                                Margin="0,0,0,10"/>
                                         <syncfusion:SfCircularChart HeightRequest="300">
                                             <syncfusion:SfCircularChart.Legend>
-                                                <syncfusion:ChartLegend/>
+                                                <syncfusion:ChartLegend Placement="{OnPlatform WinUI=Right,MacCatalyst=Right,Default=Top}"/>
                                             </syncfusion:SfCircularChart.Legend>
                                             <syncfusion:SfCircularChart.Series>
                                                 <syncfusion:DoughnutSeries ItemsSource="{Binding AgeDistribution}"
@@ -54,7 +78,7 @@
                                 <!-- Geographic Distribution -->
                                 <Border Stroke="#EAEAEA"
                                         StrokeShape="RoundRectangle 10"
-                                        BackgroundColor="White"
+                                        BackgroundColor="White"                                        
                                         Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
                                     <VerticalStackLayout Padding="15">
                                         <Label Text="Geographic Distribution" 
@@ -86,7 +110,7 @@
                                         </syncfusion:SfCartesianChart>
                                     </VerticalStackLayout>
                                 </Border>
-                            </VerticalStackLayout>
+                            </StackLayout>
                         </ScrollView>
                     </syncfusion:SfTabItem.Content>
                 </syncfusion:SfTabItem>
@@ -95,7 +119,8 @@
                 <syncfusion:SfTabItem Header="Behavior">
                     <syncfusion:SfTabItem.Content>
                         <ScrollView>
-                            <VerticalStackLayout Padding="15" Spacing="15">
+                            <StackLayout Padding="15" Spacing="15"
+                                         Orientation="{OnPlatform WinUI=Horizontal,MacCatalyst=Horizontal,Default=Vertical}">
                                 <!-- Customer Journey (Alternative to Funnel) -->
                                 <Border Stroke="#EAEAEA"
                                         StrokeShape="RoundRectangle 10"
@@ -167,7 +192,7 @@
                                         </syncfusion:SfCartesianChart>
                                     </VerticalStackLayout>
                                 </Border>
-                            </VerticalStackLayout>
+                            </StackLayout>
                         </ScrollView>
                     </syncfusion:SfTabItem.Content>
                 </syncfusion:SfTabItem>
@@ -176,7 +201,8 @@
                 <syncfusion:SfTabItem Header="Feedback">
                     <syncfusion:SfTabItem.Content>
                         <ScrollView>
-                            <VerticalStackLayout Padding="15" Spacing="15">
+                            <StackLayout Padding="15" Spacing="15"
+                                         Orientation="{OnPlatform WinUI=Horizontal,MacCatalyst=Horizontal,Default=Vertical}">
                                 <!-- Customer Satisfaction -->
                                 <Border Stroke="#EAEAEA"
                                         StrokeShape="RoundRectangle 10"
@@ -189,7 +215,7 @@
                                                Margin="0,0,0,10"/>
                                         <syncfusion:SfCircularChart HeightRequest="300">
                                             <syncfusion:SfCircularChart.Legend>
-                                                <syncfusion:ChartLegend/>
+                                                <syncfusion:ChartLegend Placement="{OnPlatform WinUI=Right,MacCatalyst=Right,Default=Top}"/>
                                             </syncfusion:SfCircularChart.Legend>
                                             <syncfusion:SfCircularChart.Series>
                                                 <syncfusion:PieSeries ItemsSource="{Binding CustomerSatisfaction}"
@@ -238,7 +264,7 @@
                                         </syncfusion:SfCartesianChart>
                                     </VerticalStackLayout>
                                 </Border>
-                            </VerticalStackLayout>
+                            </StackLayout>
                         </ScrollView>
                     </syncfusion:SfTabItem.Content>
                 </syncfusion:SfTabItem>
