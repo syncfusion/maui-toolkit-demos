@@ -143,7 +143,7 @@
                             <syncfusion:SfShimmer Type="Feed"
                                                   IsVisible="{Binding IsLoading}"
                                                   IsActive="{Binding IsLoading}"
-                                                  HeightRequest="285" />
+                                                  VerticalOptions="Fill"/>
                         </Grid>
                     </Border>
 
@@ -249,7 +249,7 @@
                             <syncfusion:SfShimmer Type="Feed"
                                                   IsVisible="{Binding IsLoading}"
                                                   IsActive="{Binding IsLoading}"
-                                                  HeightRequest="285" />
+                                                  VerticalOptions="Fill" />
                         </Grid>
                     </Border>
 
@@ -296,7 +296,7 @@
                             <syncfusion:SfShimmer Type="CirclePersona"
                                                   IsVisible="{Binding IsLoading}"
                                                   IsActive="{Binding IsLoading}"
-                                                  HeightRequest="335" />
+                                                  VerticalOptions="Fill" />
                         </Grid>
                     </Border>
 
@@ -370,7 +370,7 @@
                             <syncfusion:SfShimmer Type="Article"
                                                   IsVisible="{Binding IsLoading}"
                                                   IsActive="{Binding IsLoading}"
-                                                  HeightRequest="285" />
+                                                 VerticalOptions="Fill" />
                         </Grid>
                     </Border>
                 </Grid>
