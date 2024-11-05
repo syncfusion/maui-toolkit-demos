@@ -138,7 +138,7 @@
                                     <syncfusion:ChartAxisTitle Text="Month" FontSize="12" TextColor="#475467"/>
                                 </syncfusion:CategoryAxis.Title>
                                 <syncfusion:CategoryAxis.LabelStyle>
-                                    <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12" LabelFormat="#.##"/>
+                                    <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
                                 </syncfusion:CategoryAxis.LabelStyle>
                                 <syncfusion:CategoryAxis.MajorTickStyle>
                                     <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
@@ -194,9 +194,20 @@
                            FontAttributes="Bold" 
                            Padding="20,0,20,16"/>
 
-                    <HorizontalStackLayout HorizontalOptions="Center">
                     <syncfusion:SfCircularChart VerticalOptions="CenterAndExpand">
 
+                        <syncfusion:SfCircularChart.Legend>
+                            <syncfusion:ChartLegend Placement="Bottom">
+                               
+                                <syncfusion:ChartLegend.ItemTemplate>
+                                    <DataTemplate >
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="81% of target achieved" TextColor="#475467" FontSize="14"/>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </syncfusion:ChartLegend.ItemTemplate>
+                            </syncfusion:ChartLegend>
+                        </syncfusion:SfCircularChart.Legend>
                         
                         <syncfusion:SfCircularChart.Series>
                             <syncfusion:RadialBarSeries ItemsSource="{Binding SalesTargetData}"
@@ -208,17 +219,7 @@
                         </syncfusion:SfCircularChart.Series>
                         
                     </syncfusion:SfCircularChart>
-
-                        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
-                            <Label Text="•"
-                                   HorizontalOptions="Center"
-                                FontSize="15"
-                                TextColor="#475467"
-                                VerticalOptions="Center"/>
-                            <Label Text="81% of target achieved" TextColor="#475467" FontSize="14"/>
-                        </HorizontalStackLayout>
-                    </HorizontalStackLayout>
-
+                        
                 </VerticalStackLayout>
             </Border>
         </Grid>

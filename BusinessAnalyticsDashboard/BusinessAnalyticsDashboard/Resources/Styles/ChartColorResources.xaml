@@ -29,5 +29,9 @@
         <SolidColorBrush>#F4EBFF</SolidColorBrush>
     </local:ChartColorModel>
 
+    <local:ChartColorModel x:Key="PaletteBrushesLight4">
+        <SolidColorBrush>#DCFAE6</SolidColorBrush>
+        <SolidColorBrush>#D0D5DD</SolidColorBrush>
+    </local:ChartColorModel>
 
 </ResourceDictionary>
