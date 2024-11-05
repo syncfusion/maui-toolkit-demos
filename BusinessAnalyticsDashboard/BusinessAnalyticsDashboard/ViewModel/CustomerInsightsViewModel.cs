@@ -203,10 +203,10 @@ namespace BusinessAnalyticsDashboard
             CustomerSatisfaction = new List<ChartData>
             {
                 new ChartData { Category = "Very Satisfied", Value = 45 },
-                new ChartData { Category = "Satisfied", Value = 30 },
+                new ChartData { Category = "Satisfied", Value = 25 },
                 new ChartData { Category = "Neutral", Value = 15 },
-                new ChartData { Category = "Dissatisfied", Value = 7 },
-                new ChartData { Category = "Very Dissatisfied", Value = 3 }
+                new ChartData { Category = "Dissatisfied", Value = 10 },
+                new ChartData { Category = "Very Dissatisfied", Value = 5 }
             };
 
             // Feedback Trends Data

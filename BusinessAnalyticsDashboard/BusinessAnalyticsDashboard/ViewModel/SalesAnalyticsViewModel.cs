@@ -155,35 +155,35 @@ namespace BusinessAnalyticsDashboard
             // Load Category Sales Data
             CategorySales = new List<CategorySalesData>
             {
-                new CategorySalesData { Category = "Electronics", Value = 45000 },
-                new CategorySalesData { Category = "Clothing", Value = 32000 },
-                new CategorySalesData { Category = "Books", Value = 15000 },
-                new CategorySalesData { Category = "Home", Value = 28000 },
-                new CategorySalesData { Category = "Sports", Value = 22000 }
+                new CategorySalesData { Category = "Electronics", Value = 4.5 },
+                new CategorySalesData { Category = "Clothing", Value = 3.2 },
+                new CategorySalesData { Category = "Books", Value = 1.5 },
+                new CategorySalesData { Category = "Home", Value = 2.8 },
+                new CategorySalesData { Category = "Sports", Value = 2.2 }
             };
 
             // Load Current Period Sales Data
             CurrentPeriodSales = new List<SalesData>
             {
-                new SalesData { Date = "Mon", Value = 12000 },
-                new SalesData { Date = "Tue", Value = 14000 },
-                new SalesData { Date = "Wed", Value = 15000 },
-                new SalesData { Date = "Thu", Value = 13500 },
-                new SalesData { Date = "Fri", Value = 16000 },
-                new SalesData { Date = "Sat", Value = 18000 },
-                new SalesData { Date = "Sun", Value = 15500 }
+                new SalesData { Date = "Mon", Value = 1.2 },
+                new SalesData { Date = "Tue", Value = 1.5 },
+                new SalesData { Date = "Wed", Value = 1.5 },
+                new SalesData { Date = "Thu", Value = 1.35 },
+                new SalesData { Date = "Fri", Value = 1.6 },
+                new SalesData { Date = "Sat", Value = 1.8 },
+                new SalesData { Date = "Sun", Value = 1.55 }
             };
 
             // Load Previous Period Sales Data
             PreviousPeriodSales = new List<SalesData>
             {
-                new SalesData { Date = "Mon", Value = 11000 },
-                new SalesData { Date = "Tue", Value = 13000 },
-                new SalesData { Date = "Wed", Value = 14000 },
-                new SalesData { Date = "Thu", Value = 12500 },
-                new SalesData { Date = "Fri", Value = 15000 },
-                new SalesData { Date = "Sat", Value = 17000 },
-                new SalesData { Date = "Sun", Value = 14500 }
+                new SalesData { Date = "Mon", Value = 1.1 },
+                new SalesData { Date = "Tue", Value = 1.3 },
+                new SalesData { Date = "Wed", Value = 1.4 },
+                new SalesData { Date = "Thu", Value = 1.25 },
+                new SalesData { Date = "Fri", Value = 1.5 },
+                new SalesData { Date = "Sat", Value = 1.7 },
+                new SalesData { Date = "Sun", Value = 1.45 }
             };
 
             // Load Regional Sales Data
@@ -202,7 +202,7 @@ namespace BusinessAnalyticsDashboard
                 new ProductPerformanceData
                 {
                     Product = "Laptop Pro",
-                    Revenue = 45000,
+                    Revenue = 4.5,
                     UnitsSold = 150,
                     GrowthRate = 12.5,
                     Rating = 4.5
@@ -210,7 +210,7 @@ namespace BusinessAnalyticsDashboard
                 new ProductPerformanceData
                 {
                     Product = "SmartPhone X",
-                    Revenue = 38000,
+                    Revenue = 3.8,
                     UnitsSold = 200,
                     GrowthRate = 15.2,
                     Rating = 4.3
@@ -218,7 +218,7 @@ namespace BusinessAnalyticsDashboard
                 new ProductPerformanceData
                 {
                     Product = "Tablet Air",
-                    Revenue = 52000,
+                    Revenue = 5.2,
                     UnitsSold = 180,
                     GrowthRate = 8.7,
                     Rating = 4.7
@@ -226,7 +226,7 @@ namespace BusinessAnalyticsDashboard
                 new ProductPerformanceData
                 {
                     Product = "Smart Watch",
-                    Revenue = 32000,
+                    Revenue = 3.2,
                     UnitsSold = 250,
                     GrowthRate = 18.3,
                     Rating = 4.2
@@ -234,7 +234,7 @@ namespace BusinessAnalyticsDashboard
                 new ProductPerformanceData
                 {
                     Product = "Wireless Buds",
-                    Revenue = 48000,
+                    Revenue = 4.8,
                     UnitsSold = 300,
                     GrowthRate = 22.1,
                     Rating = 4.6
