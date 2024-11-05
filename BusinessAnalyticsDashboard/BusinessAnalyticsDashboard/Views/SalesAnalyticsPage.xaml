@@ -67,7 +67,7 @@
                                     </syncfusion:SfCartesianChart.XAxes>
                                     
                                     <syncfusion:SfCartesianChart.YAxes>
-                                            <syncfusion:NumericalAxis Interval="2" EdgeLabelsDrawingMode="Center" PlotOffsetEnd="10">
+                                            <syncfusion:NumericalAxis EdgeLabelsDrawingMode="Center" PlotOffsetEnd="10">
                                             <syncfusion:NumericalAxis.Title>
                                                     <syncfusion:ChartAxisTitle Text="Sales ($)" FontSize="12" TextColor="#475467"/>
                                             </syncfusion:NumericalAxis.Title>
@@ -139,7 +139,7 @@
                                     </syncfusion:SfCartesianChart.XAxes>
                                     
                                     <syncfusion:SfCartesianChart.YAxes>
-                                            <syncfusion:NumericalAxis Interval="2" EdgeLabelsDrawingMode="Center" PlotOffsetEnd="10">
+                                            <syncfusion:NumericalAxis EdgeLabelsDrawingMode="Center" PlotOffsetEnd="10">
                                             <syncfusion:NumericalAxis.Title>
                                                     <syncfusion:ChartAxisTitle Text="Sales ($)" FontSize="12" TextColor="#475467"/>
                                             </syncfusion:NumericalAxis.Title>
@@ -253,7 +253,7 @@
                                     </syncfusion:SfCartesianChart.XAxes>
                                     
                                     <syncfusion:SfCartesianChart.YAxes>
-                                            <syncfusion:NumericalAxis Interval="2" EdgeLabelsDrawingMode="Center" PlotOffsetEnd="10">
+                                            <syncfusion:NumericalAxis EdgeLabelsDrawingMode="Center" PlotOffsetEnd="10">
                                             <syncfusion:NumericalAxis.Title>
                                                     <syncfusion:ChartAxisTitle Text="Revenue" FontSize="12" TextColor="#475467"/>
                                             </syncfusion:NumericalAxis.Title>

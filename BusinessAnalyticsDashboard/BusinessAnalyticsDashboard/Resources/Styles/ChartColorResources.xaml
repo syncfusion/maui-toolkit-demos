@@ -7,6 +7,7 @@
     <SolidColorBrush x:Key="series1Light">#7F56D9</SolidColorBrush>
     <SolidColorBrush x:Key="series2Light">#DCFAE6</SolidColorBrush>
     <SolidColorBrush x:Key="series3Light">#079455</SolidColorBrush>
+    <SolidColorBrush x:Key="series4Light">#DCFAE6</SolidColorBrush>
 
     <local:ChartColorModel x:Key="PaletteBrushesLight1" >
         <SolidColorBrush>#3068F7</SolidColorBrush>
@@ -18,6 +19,14 @@
         <SolidColorBrush>#9E77ED</SolidColorBrush>
         <SolidColorBrush>#B692F6</SolidColorBrush>
         <SolidColorBrush>#EAECF0</SolidColorBrush>
+    </local:ChartColorModel>
+
+    <local:ChartColorModel x:Key="PaletteBrushesLight3">
+        <SolidColorBrush>#7F56D9</SolidColorBrush>
+        <SolidColorBrush>#9E77ED</SolidColorBrush>
+        <SolidColorBrush>#B692F6</SolidColorBrush>
+        <SolidColorBrush>#D6BBFB</SolidColorBrush>
+        <SolidColorBrush>#F4EBFF</SolidColorBrush>
     </local:ChartColorModel>
 
 
