@@ -263,7 +263,7 @@
                             Shadow="{Shadow Brush={StaticResource Gray300}, Offset='2,2', Radius=4, Opacity=0.3}">
                         <Grid>
                             <VerticalStackLayout Padding="15">
-                                <Label Text="Sales distribution period"
+                                <Label Text="Sales distribution Period"
                                        FontSize="18"
                                        FontAttributes="Bold"
                                        Margin="0,0,0,10" />
