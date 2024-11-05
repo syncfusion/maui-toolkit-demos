@@ -150,7 +150,7 @@
                                     <syncfusion:ChartAxisTitle Text="Month" FontSize="12" TextColor="#475467"/>
                                 </syncfusion:CategoryAxis.Title>
                                 <syncfusion:CategoryAxis.LabelStyle>
-                                    <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12" LabelFormat="#.##"/>
+                                    <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
                                 </syncfusion:CategoryAxis.LabelStyle>
                                 <syncfusion:CategoryAxis.MajorTickStyle>
                                     <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>

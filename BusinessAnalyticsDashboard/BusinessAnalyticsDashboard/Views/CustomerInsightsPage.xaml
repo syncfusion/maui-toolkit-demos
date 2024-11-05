@@ -78,7 +78,7 @@
                                                         <syncfusion:ChartAxisTitle Text="Region" FontSize="12" TextColor="#475467"/>
                                                     </syncfusion:CategoryAxis.Title>
                                                     <syncfusion:CategoryAxis.LabelStyle>
-                                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12" LabelFormat="#.##"/>
+                                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
                                                     </syncfusion:CategoryAxis.LabelStyle>
                                                     <syncfusion:CategoryAxis.MajorTickStyle>
                                                         <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
@@ -148,7 +148,7 @@
                                                         <syncfusion:ChartAxisTitle Text="Stage" FontSize="12" TextColor="#475467"/>
                                                     </syncfusion:CategoryAxis.Title>
                                                     <syncfusion:CategoryAxis.LabelStyle>
-                                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12" LabelFormat="#.##"/>
+                                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
                                                     </syncfusion:CategoryAxis.LabelStyle>
                                                     <syncfusion:CategoryAxis.MajorTickStyle>
                                                         <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
@@ -207,7 +207,7 @@
                                                         <syncfusion:ChartAxisTitle Text="Month" FontSize="12" TextColor="#475467"/>
                                                     </syncfusion:CategoryAxis.Title>
                                                     <syncfusion:CategoryAxis.LabelStyle>
-                                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12" LabelFormat="#.##"/>
+                                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
                                                     </syncfusion:CategoryAxis.LabelStyle>
                                                     <syncfusion:CategoryAxis.MajorTickStyle>
                                                         <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
@@ -308,7 +308,7 @@
                                                         <syncfusion:ChartAxisTitle Text="Month" FontSize="12" TextColor="#475467"/>
                                                     </syncfusion:CategoryAxis.Title>
                                                     <syncfusion:CategoryAxis.LabelStyle>
-                                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12" LabelFormat="#.##"/>
+                                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
                                                     </syncfusion:CategoryAxis.LabelStyle>
                                                     <syncfusion:CategoryAxis.MajorTickStyle>
                                                         <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
