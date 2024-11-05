@@ -67,7 +67,6 @@ namespace BusinessAnalyticsDashboard
             SalesTargetData = new List<SalesTargetData>
             {
                 new SalesTargetData { Category = "Achieved", Value = SalesTargetProgress },
-                new SalesTargetData { Category = "Remaining", Value = 100 - SalesTargetProgress }
             };
         }
     }
