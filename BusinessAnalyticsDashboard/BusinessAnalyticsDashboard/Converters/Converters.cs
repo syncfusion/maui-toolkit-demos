@@ -60,10 +60,10 @@ namespace BusinessAnalyticsDashboard
                 return Colors.Gray;
             return (AchievementType)value switch
             {
-                AchievementType.Project => Color.FromArgb("#4CAF50"),
-                AchievementType.Award => Color.FromArgb("#FFC107"),
-                AchievementType.Innovation => Color.FromArgb("#2196F3"),
-                AchievementType.Training => Color.FromArgb("#9C27B0"),
+                AchievementType.Project => Color.FromArgb("#FFFAEB"),
+                AchievementType.Award => Color.FromArgb("#ECFDF3"),
+                AchievementType.Innovation => Color.FromArgb("#FEF3F2"),
+                AchievementType.Training => Color.FromArgb("#F9F5FF"),
                 _ => Colors.Gray
             };
         }
@@ -82,10 +82,10 @@ namespace BusinessAnalyticsDashboard
                 return "default_icon.png";
             return (AchievementType)value switch
             {
-                AchievementType.Project => "project_icon.png",
-                AchievementType.Award => "award_icon.png",
-                AchievementType.Innovation => "innovation_icon.png",
-                AchievementType.Training => "training_icon.png",
+                AchievementType.Project => "project.png",
+                AchievementType.Award => "award.png",
+                AchievementType.Innovation => "innovation.png",
+                AchievementType.Training => "project.png",
                 _ => "default_icon.png"
             };
         }
@@ -104,10 +104,32 @@ namespace BusinessAnalyticsDashboard
                 return Colors.Gray.WithAlpha(0.2f);
             return (AchievementType)value switch
             {
-                AchievementType.Project => Color.FromArgb("#4CAF50").WithAlpha(0.2f),
-                AchievementType.Award => Color.FromArgb("#FFC107").WithAlpha(0.2f),
-                AchievementType.Innovation => Color.FromArgb("#2196F3").WithAlpha(0.2f),
-                AchievementType.Training => Color.FromArgb("#9C27B0").WithAlpha(0.2f),
+                AchievementType.Project => Color.FromArgb("#F79009"),
+                AchievementType.Award => Color.FromArgb("#079455"),
+                AchievementType.Innovation => Color.FromArgb("#D92D20"),
+                AchievementType.Training => Color.FromArgb("#7F56D9"),
+                _ => Colors.Gray.WithAlpha(0.2f)
+            };
+        }
+
+        public object ConvertBack(object? value, Type? targetType, object? parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class AchievementStrokeConverter : IValueConverter
+    {
+        public object Convert(object? value, Type? targetType, object? parameter, CultureInfo culture)
+        {
+            if (value == null)
+                return Colors.Gray.WithAlpha(0.2f);
+            return (AchievementType)value switch
+            {
+                AchievementType.Project => Color.FromArgb("#FEDF89"),
+                AchievementType.Award => Color.FromArgb("#ABEFC6"),
+                AchievementType.Innovation => Color.FromArgb("#FECDCA"),
+                AchievementType.Training => Color.FromArgb("#7F56D9"),
                 _ => Colors.Gray.WithAlpha(0.2f)
             };
         }

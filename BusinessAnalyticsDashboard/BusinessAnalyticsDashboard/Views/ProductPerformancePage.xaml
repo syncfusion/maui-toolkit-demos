@@ -14,11 +14,14 @@
                 </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
         </ScrollView.Resources>
-        
-        <Grid Padding="15" RowSpacing="15" ColumnSpacing="20" RowDefinitions="1*,4*,5*" ColumnDefinitions="*,*">
-           
+
+        <VerticalStackLayout Padding="15" Spacing="15">
             <!-- Time Period Selector -->
-           <VerticalStackLayout Grid.Row="0" Grid.ColumnSpan="2">
+            <Border Stroke="Transparent"
+                    StrokeShape="RoundRectangle 10"
+                    BackgroundColor="White"
+                    Shadow="{Shadow Brush=#FFFFFF, Offset='4,4', Radius=10}">
+                <VerticalStackLayout>
                     <syncfusion:SfSegmentedControl x:Name="timeSegmentedControl"
                                ItemsSource="{Binding TimePeriods}"
                                SelectedIndex="{Binding SelectedTimePeriodIndex}"
@@ -31,15 +34,14 @@
                         </syncfusion:SfSegmentedControl.SelectionIndicatorSettings>
                     </syncfusion:SfSegmentedControl>
                 </VerticalStackLayout>
-          
-   
+            </Border>
             <!-- Top Performing Products Carousel -->
-            <Border Grid.Row="1" Grid.ColumnSpan="2" Stroke="#EAEAEA"
+            <Border Stroke="#D0D5DD"
                     StrokeShape="RoundRectangle 10"
                     BackgroundColor="White"
-                    Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
+                    Shadow="{Shadow Brush=Transparent, Offset='4,4', Radius=10}">
                 <VerticalStackLayout Padding="15">
-                    <Label Text="Top Performing Products" 
+                    <Label Text="Top Performing Products"
                            FontSize="16" 
                            FontAttributes="Bold" 
                            Margin="0,0,0,10"/>
@@ -82,121 +84,125 @@
                     </syncfusion:SfCarousel>
                 </VerticalStackLayout>
             </Border>
-         
-            <Border Grid.Row="2" Grid.Column="0" Stroke="#EAEAEA"
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
+                <!-- Product Attributes Radar Chart (Alternative to Polar) -->
+                <Border Stroke="#D0D5DD" Grid.Column="0"
                     StrokeShape="RoundRectangle 10"
                     BackgroundColor="White"
-                    Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
-                <VerticalStackLayout Padding="15">
-                    <Label Text="Product Performance Metrics" 
+                    Shadow="{Shadow Brush=Transparent, Offset='4,4', Radius=10}">
+
+                        <VerticalStackLayout Padding="15">
+                            <Label Text="Product Performance Metrics" 
                            FontSize="18" TextColor="#101828" FontAttributes="Bold" 
                            Padding="20,0,20,16"/>
-                    <syncfusion:SfCartesianChart HeightRequest="350">
-                     
-                        <syncfusion:SfCartesianChart.XAxes>
-                            <syncfusion:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="False">
-                                <syncfusion:CategoryAxis.Title>
-                                    <syncfusion:ChartAxisTitle Text="Attributes" FontSize="12" TextColor="#475467"/>
-                                </syncfusion:CategoryAxis.Title>
-                                <syncfusion:CategoryAxis.LabelStyle>
-                                    <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
-                                </syncfusion:CategoryAxis.LabelStyle>
-                                <syncfusion:CategoryAxis.MajorTickStyle>
-                                    <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
-                                </syncfusion:CategoryAxis.MajorTickStyle>
-                            </syncfusion:CategoryAxis>
-                        </syncfusion:SfCartesianChart.XAxes>
-                        
-                        <syncfusion:SfCartesianChart.YAxes>
-                            <syncfusion:NumericalAxis Minimum="0" Maximum="5" EdgeLabelsDrawingMode="Center" PlotOffsetEnd="10">
-                                <syncfusion:NumericalAxis.Title>
-                                    <syncfusion:ChartAxisTitle Text="Rating" FontSize="12" TextColor="#475467"/>
-                                </syncfusion:NumericalAxis.Title>
-                                <syncfusion:NumericalAxis.LabelStyle>
-                                    <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
-                                </syncfusion:NumericalAxis.LabelStyle>
-                                <syncfusion:NumericalAxis.MajorTickStyle>
-                                    <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
-                                </syncfusion:NumericalAxis.MajorTickStyle>
-                                <syncfusion:NumericalAxis.AxisLineStyle>
-                                    <syncfusion:ChartLineStyle StrokeWidth="0" />
-                                </syncfusion:NumericalAxis.AxisLineStyle>
-                            </syncfusion:NumericalAxis>
-                        </syncfusion:SfCartesianChart.YAxes>
-                        
-                        <syncfusion:SfCartesianChart.Series>
-                            <syncfusion:LineSeries ItemsSource="{Binding SelectedProductAttributes}"
+                        <syncfusion:SfCartesianChart SizeChanged="SfChart_SizeChanged">
+
+                                <syncfusion:SfCartesianChart.XAxes>
+                                    <syncfusion:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="False">
+                                        <syncfusion:CategoryAxis.Title>
+                                            <syncfusion:ChartAxisTitle Text="Attributes" FontSize="12" TextColor="#475467"/>
+                                        </syncfusion:CategoryAxis.Title>
+                                        <syncfusion:CategoryAxis.LabelStyle>
+                                            <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
+                                        </syncfusion:CategoryAxis.LabelStyle>
+                                        <syncfusion:CategoryAxis.MajorTickStyle>
+                                            <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
+                                        </syncfusion:CategoryAxis.MajorTickStyle>
+                                    </syncfusion:CategoryAxis>
+                                </syncfusion:SfCartesianChart.XAxes>
+
+                                <syncfusion:SfCartesianChart.YAxes>
+                                    <syncfusion:NumericalAxis Minimum="0" Maximum="5" EdgeLabelsDrawingMode="Center" PlotOffsetEnd="10">
+                                        <syncfusion:NumericalAxis.Title>
+                                            <syncfusion:ChartAxisTitle Text="Rating" FontSize="12" TextColor="#475467"/>
+                                        </syncfusion:NumericalAxis.Title>
+                                        <syncfusion:NumericalAxis.LabelStyle>
+                                            <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
+                                        </syncfusion:NumericalAxis.LabelStyle>
+                                        <syncfusion:NumericalAxis.MajorTickStyle>
+                                            <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
+                                        </syncfusion:NumericalAxis.MajorTickStyle>
+                                        <syncfusion:NumericalAxis.AxisLineStyle>
+                                            <syncfusion:ChartLineStyle StrokeWidth="0" />
+                                        </syncfusion:NumericalAxis.AxisLineStyle>
+                                    </syncfusion:NumericalAxis>
+                                </syncfusion:SfCartesianChart.YAxes>
+
+                                <syncfusion:SfCartesianChart.Series>
+                                    <syncfusion:LineSeries ItemsSource="{Binding SelectedProductAttributes}"
                                             XBindingPath="Attribute" YBindingPath="Rating" StrokeWidth="3"
                                             ShowDataLabels="True" ShowMarkers="True" Fill="{StaticResource series3Light}">
-                                <syncfusion:LineSeries.MarkerSettings>
-                                    <syncfusion:ChartMarkerSettings Width="8" Height="8" Fill="#FFFFFF" StrokeWidth="3"
+                                        <syncfusion:LineSeries.MarkerSettings>
+                                            <syncfusion:ChartMarkerSettings Width="8" Height="8" Fill="#FFFFFF" StrokeWidth="3"
                                             Stroke="{StaticResource series3Light}"/>
-                                </syncfusion:LineSeries.MarkerSettings>
+                                        </syncfusion:LineSeries.MarkerSettings>
 
-                                <syncfusion:LineSeries.DataLabelSettings>
-                                    <syncfusion:CartesianDataLabelSettings>
-                                        <syncfusion:CartesianDataLabelSettings.LabelStyle>
-                                            <syncfusion:ChartDataLabelStyle FontSize="12" Background="#ECFDF3"
+                                        <syncfusion:LineSeries.DataLabelSettings>
+                                            <syncfusion:CartesianDataLabelSettings>
+                                                <syncfusion:CartesianDataLabelSettings.LabelStyle>
+                                                    <syncfusion:ChartDataLabelStyle FontSize="12" Background="#ECFDF3"
                                                 TextColor="{StaticResource series3Light}" Stroke="#ABEFC6" StrokeWidth="1"/>
-                                        </syncfusion:CartesianDataLabelSettings.LabelStyle>
-                                    </syncfusion:CartesianDataLabelSettings>
-                                </syncfusion:LineSeries.DataLabelSettings>
-                            </syncfusion:LineSeries>
-                        </syncfusion:SfCartesianChart.Series>
-                    </syncfusion:SfCartesianChart>
-                </VerticalStackLayout>
-            </Border>
+                                                </syncfusion:CartesianDataLabelSettings.LabelStyle>
+                                            </syncfusion:CartesianDataLabelSettings>
+                                        </syncfusion:LineSeries.DataLabelSettings>
+                                    </syncfusion:LineSeries>
+                                </syncfusion:SfCartesianChart.Series>
+                            </syncfusion:SfCartesianChart>
+                        </VerticalStackLayout>
+                </Border>
 
-            <!-- Sales Trend -->
-            <Border Grid.Row="2" Grid.Column="1" Stroke="#EAEAEA"
+                <!-- Sales Trend -->
+                <Border Stroke="#D0D5DD" Grid.Column="1"
                     StrokeShape="RoundRectangle 10"
                     BackgroundColor="White"
-                    Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
-                <VerticalStackLayout Padding="15">
-                    <Label Text="Sales Trend" 
+                    Shadow="{Shadow Brush=Transparent, Offset='4,4', Radius=10}">
+                    <VerticalStackLayout Padding="15">
+                        <Label Text="Sales Trend" 
                           FontSize="18" TextColor="#101828" FontAttributes="Bold" 
                           Padding="20,0,20,16"/>
-                    <syncfusion:SfCartesianChart HeightRequest="350">
-                       
-                        <syncfusion:SfCartesianChart.XAxes>
-                            <syncfusion:CategoryAxis ShowMajorGridLines="False">
-                                <syncfusion:CategoryAxis.Title>
-                                    <syncfusion:ChartAxisTitle Text="Period" FontSize="12" TextColor="#475467"/>
-                                </syncfusion:CategoryAxis.Title>
-                                <syncfusion:CategoryAxis.LabelStyle>
-                                    <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
-                                </syncfusion:CategoryAxis.LabelStyle>
-                                <syncfusion:CategoryAxis.MajorTickStyle>
-                                    <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
-                                </syncfusion:CategoryAxis.MajorTickStyle>
-                            </syncfusion:CategoryAxis>
-                        </syncfusion:SfCartesianChart.XAxes>
-                        
-                        <syncfusion:SfCartesianChart.YAxes>
-                            <syncfusion:NumericalAxis EdgeLabelsDrawingMode="Center" PlotOffsetEnd="10">
-                                <syncfusion:NumericalAxis.Title>
-                                    <syncfusion:ChartAxisTitle Text="Sales" FontSize="12" TextColor="#475467"/>
-                                </syncfusion:NumericalAxis.Title>
-                                <syncfusion:NumericalAxis.LabelStyle>
-                                    <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
-                                </syncfusion:NumericalAxis.LabelStyle>
-                                <syncfusion:NumericalAxis.MajorTickStyle>
-                                    <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
-                                </syncfusion:NumericalAxis.MajorTickStyle>
-                                <syncfusion:NumericalAxis.AxisLineStyle>
-                                    <syncfusion:ChartLineStyle StrokeWidth="0" />
-                                </syncfusion:NumericalAxis.AxisLineStyle>
-                            </syncfusion:NumericalAxis>
-                        </syncfusion:SfCartesianChart.YAxes>
-                        
-                        <syncfusion:SfCartesianChart.Series>
-                            <syncfusion:AreaSeries ItemsSource="{Binding SalesTrend}"
+                        <syncfusion:SfCartesianChart SizeChanged="SfChart_SizeChanged">
+
+                            <syncfusion:SfCartesianChart.XAxes>
+                                <syncfusion:CategoryAxis ShowMajorGridLines="False">
+                                    <syncfusion:CategoryAxis.Title>
+                                        <syncfusion:ChartAxisTitle Text="Period" FontSize="12" TextColor="#475467"/>
+                                    </syncfusion:CategoryAxis.Title>
+                                    <syncfusion:CategoryAxis.LabelStyle>
+                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
+                                    </syncfusion:CategoryAxis.LabelStyle>
+                                    <syncfusion:CategoryAxis.MajorTickStyle>
+                                        <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
+                                    </syncfusion:CategoryAxis.MajorTickStyle>
+                                </syncfusion:CategoryAxis>
+                            </syncfusion:SfCartesianChart.XAxes>
+
+                            <syncfusion:SfCartesianChart.YAxes>
+                                <syncfusion:NumericalAxis EdgeLabelsDrawingMode="Center" PlotOffsetEnd="10">
+                                    <syncfusion:NumericalAxis.Title>
+                                        <syncfusion:ChartAxisTitle Text="Sales" FontSize="12" TextColor="#475467"/>
+                                    </syncfusion:NumericalAxis.Title>
+                                    <syncfusion:NumericalAxis.LabelStyle>
+                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
+                                    </syncfusion:NumericalAxis.LabelStyle>
+                                    <syncfusion:NumericalAxis.MajorTickStyle>
+                                        <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
+                                    </syncfusion:NumericalAxis.MajorTickStyle>
+                                    <syncfusion:NumericalAxis.AxisLineStyle>
+                                        <syncfusion:ChartLineStyle StrokeWidth="0" />
+                                    </syncfusion:NumericalAxis.AxisLineStyle>
+                                </syncfusion:NumericalAxis>
+                            </syncfusion:SfCartesianChart.YAxes>
+
+                            <syncfusion:SfCartesianChart.Series>
+                                <syncfusion:AreaSeries ItemsSource="{Binding SalesTrend}"
                                                   XBindingPath="Period" YBindingPath="Sales"
                                                   Opacity="0.1" Fill="{StaticResource series3Light}" />
-                        </syncfusion:SfCartesianChart.Series>
-                    </syncfusion:SfCartesianChart>
-                </VerticalStackLayout>
-            </Border>
-        </Grid>
+                            </syncfusion:SfCartesianChart.Series>
+                        </syncfusion:SfCartesianChart>
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+        </VerticalStackLayout>
     </ScrollView>
 </ContentView>

@@ -44,7 +44,7 @@
                                         <Label Text="Age Distribution" 
                                               FontSize="18" TextColor="#101828" FontAttributes="Bold" 
                                               Padding="20,0,20,16"/>
-                                        <syncfusion:SfCircularChart HeightRequest="350">
+                                        <syncfusion:SfCircularChart SizeChanged="SfChart_SizeChanged">
                                             
                                             <syncfusion:SfCircularChart.Legend>
                                                 <syncfusion:ChartLegend Placement="Bottom"/>
@@ -70,7 +70,7 @@
                                         <Label Text="Revenue Trend" 
                                              FontSize="18" TextColor="#101828" FontAttributes="Bold" 
                                              Padding="20,0,20,16"/>
-                                        <syncfusion:SfCartesianChart HeightRequest="350">
+                                        <syncfusion:SfCartesianChart SizeChanged="SfChart_SizeChanged">
                                             
                                             <syncfusion:SfCartesianChart.XAxes>
                                                 <syncfusion:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="False">
@@ -139,8 +139,8 @@
                                         <Label Text="Customer Journey" 
                                                FontSize="18" TextColor="#101828" FontAttributes="Bold" 
                                                Padding="20,0,20,16"/>
-                                        
-                                        <syncfusion:SfCartesianChart HeightRequest="350">
+
+                                        <syncfusion:SfCartesianChart SizeChanged="SfChart_SizeChanged">
                                             
                                             <syncfusion:SfCartesianChart.XAxes>
                                                 <syncfusion:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="False">
@@ -199,7 +199,7 @@
                                         <Label Text="Purchase Frequency" 
                                                FontSize="18" TextColor="#101828" FontAttributes="Bold" 
                                                Padding="20,0,20,16"/>
-                                        <syncfusion:SfCartesianChart HeightRequest="350">
+                                        <syncfusion:SfCartesianChart SizeChanged="SfChart_SizeChanged">
                                             
                                             <syncfusion:SfCartesianChart.XAxes>
                                                 <syncfusion:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="False">
@@ -274,7 +274,7 @@
                                         <Label Text="Customer Satisfaction" 
                                               FontSize="18" TextColor="#101828" FontAttributes="Bold" 
                                               Padding="20,0,20,16"/>
-                                        <syncfusion:SfCircularChart HeightRequest="350">
+                                        <syncfusion:SfCircularChart SizeChanged="SfChart_SizeChanged">
                                             
                                             <syncfusion:SfCircularChart.Legend>
                                                 <syncfusion:ChartLegend Placement="Bottom"/>
@@ -300,7 +300,7 @@
                                         <Label Text="Feedback Trends" 
                                               FontSize="18" TextColor="#101828" FontAttributes="Bold" 
                                                Padding="20,0,20,16"/>
-                                        <syncfusion:SfCartesianChart HeightRequest="350">
+                                        <syncfusion:SfCartesianChart SizeChanged="SfChart_SizeChanged">
                                             
                                             <syncfusion:SfCartesianChart.XAxes>
                                                 <syncfusion:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="False">

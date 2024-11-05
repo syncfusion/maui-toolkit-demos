@@ -1,5 +1,6 @@
 using Syncfusion.Maui.Toolkit.Carousel;
 using Syncfusion.Maui.Toolkit.EffectsView;
+using Syncfusion.Maui.Toolkit.TextInputLayout;
 
 namespace BusinessAnalyticsDashboard;
 
@@ -29,4 +30,23 @@ public partial class TeamMetricsPage : ContentView
         }
     }
 
+    private void SfTextInputLayout_Focused(object sender, FocusEventArgs e)
+    {
+        if(sender is SfTextInputLayout textInputLayout)
+        {
+            textInputLayout.Hint = string.Empty;
+        }
+    }
+
+    private void SfTextInputLayout_UnFocused(object sender, FocusEventArgs e)
+    {
+        if (sender is SfTextInputLayout textInputLayout)
+        {
+            if(textInputLayout.Content is Entry entry && string.IsNullOrEmpty(entry.Text))
+            {
+                textInputLayout.Hint = "Search by name or role";
+            }
+            
+        }
+    }
 }

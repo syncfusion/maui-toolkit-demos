@@ -45,9 +45,6 @@
                                FontSize="24" 
                                FontAttributes="Bold"/>
                         <HorizontalStackLayout Spacing="5">
-                            <Image Source="arrow_up.png" 
-                                   HeightRequest="12" 
-                                   WidthRequest="12"/>
                             <Label Text="12.5% vs last month" 
                                    TextColor="Green" 
                                    FontSize="12"/>
@@ -69,9 +66,6 @@
                                FontSize="24" 
                                FontAttributes="Bold"/>
                         <HorizontalStackLayout Spacing="5">
-                            <Image Source="arrow_up.png" 
-                                   HeightRequest="12" 
-                                   WidthRequest="12"/>
                             <Label Text="8.3% vs last month" 
                                    TextColor="Green" 
                                    FontSize="12"/>
@@ -93,9 +87,6 @@
                                FontSize="24" 
                                FontAttributes="Bold"/>
                         <HorizontalStackLayout Spacing="5">
-                            <Image Source="arrow_up.png" 
-                                   HeightRequest="12" 
-                                   WidthRequest="12"/>
                             <Label Text="5.2% vs last month" 
                                    TextColor="Green" 
                                    FontSize="12"/>
@@ -117,9 +108,6 @@
                                FontSize="24" 
                                FontAttributes="Bold"/>
                         <HorizontalStackLayout Spacing="5">
-                            <Image Source="arrow_down.png" 
-                                   HeightRequest="12" 
-                                   WidthRequest="12"/>
                             <Label Text="2.1% vs last month" 
                                    TextColor="Red" 
                                    FontSize="12"/>
@@ -142,7 +130,7 @@
                      FontAttributes="Bold" 
                         Padding="20,0,20,16"/>
 
-                    <syncfusion:SfCartesianChart HeightRequest="350">
+                    <syncfusion:SfCartesianChart SizeChanged="SfChart_SizeChanged">
 
                         <syncfusion:SfCartesianChart.XAxes>
                             <syncfusion:CategoryAxis ShowMajorGridLines="False" PlotOffsetStart="6" PlotOffsetEnd="6" >
@@ -206,7 +194,7 @@
                            FontAttributes="Bold" 
                            Padding="20,0,20,16"/>
 
-                    <syncfusion:SfCircularChart VerticalOptions="CenterAndExpand">
+                    <syncfusion:SfCircularChart VerticalOptions="CenterAndExpand" SizeChanged="SfChart_SizeChanged">
 
                         <syncfusion:SfCircularChart.Legend>
                             <syncfusion:ChartLegend Placement="Bottom">
