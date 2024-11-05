@@ -5,127 +5,145 @@
              xmlns:local="clr-namespace:BusinessAnalyticsDashboard"
              x:DataType="local:TeamMetricsViewModel"
              x:Class="BusinessAnalyticsDashboard.TeamMetricsPage">
-    <ScrollView>
-        <VerticalStackLayout Padding="15" Spacing="15">
-            <!-- Search Box with TextInputLayout -->
-            <Border Stroke="#EAEAEA"
-                    StrokeShape="RoundRectangle 10"
-                    BackgroundColor="White"
-                    Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
-                <syncfusion:SfTextInputLayout
-                    Hint="Search team members"
-                    HelperText="Search by name or role"
-                    ContainerType="Outlined"
-                    Margin="5">
-                    <Entry Text="{Binding SearchText}"
+    <ScrollView Background="#F2F4F7">
+        <ScrollView.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <local:ChartColorResources/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </ScrollView.Resources>
+        
+        <VerticalStackLayout Spacing="15">
+            <VerticalStackLayout Padding="20,15,20,15" Spacing="20">
+                <!-- Search Box with TextInputLayout -->
+                <Border Stroke="#D0D5DD"
+                    StrokeShape="RoundRectangle 8" HeightRequest="80"
+                    Background="#FFFFFF" 
+                    Shadow="{Shadow Brush='#1018280F', Offset='6,6', Radius=6}">
+                    <syncfusion:SfTextInputLayout x:Name="textInputLayout"  InputViewPadding="0,3,0,0"
+                    ShowHelperText="False" Padding="0,5,0,0" Hint="Search by name or role"
+                    UnfocusedStrokeThickness="0"
+                    Background="Transparent"
+                    FocusedStrokeThickness="0" Unfocused="SfTextInputLayout_UnFocused"
+                    ContainerType="None" Focused="SfTextInputLayout_Focused" >
+                        <syncfusion:SfTextInputLayout.HintLabelStyle>
+                            <syncfusion:LabelStyle TextColor="#667085" FontSize="18"/>
+                        </syncfusion:SfTextInputLayout.HintLabelStyle>
+                        <Entry Text="{Binding SearchText}" FontSize="18"
                            TextChanged="OnSearchTextChanged"/>
-                    <syncfusion:SfTextInputLayout.LeadingView>
-                        <Image Source="search.png"
-                               HeightRequest="20"
-                               WidthRequest="20"/>
-                    </syncfusion:SfTextInputLayout.LeadingView>
-                </syncfusion:SfTextInputLayout>
-            </Border>
+                        <syncfusion:SfTextInputLayout.LeadingView>
+                            <Grid Margin="0" HeightRequest="54" WidthRequest="54" >
+                                <Image Source="search.png" VerticalOptions="End"  HorizontalOptions="End"
+                               HeightRequest="25" 
+                               WidthRequest="24"/>
+                            </Grid>
+                        </syncfusion:SfTextInputLayout.LeadingView>
+                    </syncfusion:SfTextInputLayout>
+                </Border>
 
-            <!-- Team Members Performance -->
-            <syncfusion:SfEffectsView TouchDownEffects="Ripple"
+                <!-- Team Members Performance -->
+                <syncfusion:SfEffectsView TouchDownEffects="Ripple"
                                   RippleBackground="Gray">
-                <Border Stroke="#EAEAEA"
+                    <Border Stroke="#D0D5DD"
                         StrokeShape="RoundRectangle 10"
-                        BackgroundColor="White"
-                        Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
-                    <Grid RowDefinitions="Auto,Auto"
+                        BackgroundColor="#F9FAFB"
+                        Shadow="{Shadow Brush=#1018280F, Offset='6,6', Radius=6}">
+                        <Grid RowDefinitions="Auto,Auto"
                           Padding="15">
-                        <Label Text="Team Stats" 
-                               FontSize="16" 
+                            <Label Text="Team Stats" 
+                               FontSize="18" 
+                               TextColor="#101828"
                                FontAttributes="Bold"/>
-                        <Grid Grid.Row="1" 
-                              ColumnDefinitions="*,*,*" 
+                            <Grid Grid.Row="1" 
+                              ColumnDefinitions="*,1,*,1,*" 
                               Margin="0,10,0,0" 
                               ColumnSpacing="15">
-                            <VerticalStackLayout Grid.Column="0">
-                                <Label Text="Total Members" 
-                                       TextColor="Gray" 
-                                       FontSize="12"/>
-                                <Label Text="{Binding TotalMembers}" 
-                                       FontSize="20" 
-                                       FontAttributes="Bold"/>
-                            </VerticalStackLayout>
-                            <VerticalStackLayout Grid.Column="1">
-                                <Label Text="Active Tasks" 
-                                       TextColor="Gray" 
-                                       FontSize="12"/>
-                                <Label Text="{Binding ActiveTasks}" 
-                                       FontSize="20" 
-                                       FontAttributes="Bold"/>
-                            </VerticalStackLayout>
-                            <VerticalStackLayout Grid.Column="2">
-                                <Label Text="Completion Rate" 
-                                       TextColor="Gray" 
-                                       FontSize="12"/>
-                                <Label Text="{Binding CompletionRate, StringFormat='{0}%'}" 
-                                       FontSize="20" 
-                                       FontAttributes="Bold"/>
-                            </VerticalStackLayout>
-                        </Grid>
-                    </Grid>
-                </Border>
-            </syncfusion:SfEffectsView>
+                                <VerticalStackLayout Grid.Column="0"  Padding="0,5,0,0">
+                                    <Label Text="{Binding TotalMembers}" 
+                                       TextColor="#101828"
+                                       FontSize="24"/>
+                                    <Label Text="Total Members" 
+                                       TextColor="#475467" 
+                                       FontSize="14"/>
+                                </VerticalStackLayout>
+                                <Line Y1="0" Y2="58" Grid.Column="1" Stroke="#D0D5DD" StrokeThickness="1"/>
+                                <VerticalStackLayout Grid.Column="2" Padding="100,5,100,0">
+                                    <Label Text="{Binding ActiveTasks}" 
+                                       TextColor="#101828"
+                                       FontSize="24"/>
+                                    <Label Text="Active Tasks" 
+                                       TextColor="#475467" 
+                                       FontSize="14"/>
 
+                                </VerticalStackLayout>
+                                <Line Y1="0" Y2="58" Grid.Column="3" Stroke="#D0D5DD" StrokeThickness="1"/>
+                                <VerticalStackLayout Grid.Column="4"  Padding="100,5,0,0">
+                                    <Label Text="{Binding CompletionRate, StringFormat='{0}%'}" 
+                                       TextColor="#101828"
+                                       FontSize="24" />
+                                    <Label Text="Completion Rate" 
+                                       TextColor="#475467" 
+                                       FontSize="14"/>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </syncfusion:SfEffectsView>
+
+            </VerticalStackLayout>
+            
             <!-- Team Achievements -->
-            <CollectionView ItemsSource="{Binding TeamAchievements}"
+            <CollectionView ItemsSource="{Binding TeamAchievements}" Background="Transparent" Margin="0,-10,0,0"
                           EmptyView="No achievements found">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical"
-                                     ItemSpacing="15"/>
+                                     ItemSpacing="20"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="local:TeamAchievement">
                         <syncfusion:SfEffectsView 
-                            TouchDownEffects="Scale"
+                            TouchDownEffects="Scale" Padding="15,0,15,0"
                             TouchUpEffects="Scale"
                             ScaleFactor="0.98"
                             RippleBackground="{Binding Type, Converter={StaticResource AchievementRippleColorConverter}}"
-                            HighlightBackground="{Binding Type, Converter={StaticResource AchievementHighlightColorConverter}}"
-                            >
+                            HighlightBackground="{Binding Type, Converter={StaticResource AchievementHighlightColorConverter}}">
                             <syncfusion:SfEffectsView.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="OnAchievementClicked"/>
                             </syncfusion:SfEffectsView.GestureRecognizers>
-                            <Border Stroke="#EAEAEA"
+                            <Border Stroke="{Binding Type, Converter={StaticResource AchievementStrokeConverter}}"
                                    StrokeShape="RoundRectangle 10"
                                    BackgroundColor="{Binding Type, Converter={StaticResource AchievementTypeColorConverter}}"
-                                   Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
+                                   Shadow="{Shadow Brush='#1018280F', Offset='6,6', Radius=6}">
                                 <Grid RowDefinitions="Auto,Auto"
                                       Padding="15">
                                     <Grid ColumnDefinitions="Auto,*,Auto">
-                                        <Border StrokeShape="RoundRectangle 25"
-                                                HeightRequest="50"
-                                                WidthRequest="50"
+                                        <Border StrokeShape="RoundRectangle 28"
+                                                HeightRequest="56"
+                                                WidthRequest="56"
+                                                Stroke="{Binding Type, Converter={StaticResource AchievementIconBackgroundConverter}}"
                                                 BackgroundColor="{Binding Type, Converter={StaticResource AchievementIconBackgroundConverter}}">
                                             <Image Source="{Binding Type, Converter={StaticResource AchievementIconConverter}}"
                                                    HeightRequest="30"
                                                    WidthRequest="30"/>
                                         </Border>
-                                        <VerticalStackLayout Grid.Column="1"
-                                                           Margin="10,0">
+                                        <VerticalStackLayout Grid.Column="1" Spacing="5"
+                                                           Margin="10,10">
                                             <Label Text="{Binding Title}"
-                                                   TextColor="White"
+                                                   TextColor="#344054" FontSize="18"
                                                    FontAttributes="Bold"/>
                                             <Label Text="{Binding TeamMember}"
-                                                   TextColor="White"
-                                                   Opacity="0.8"/>
+                                                   TextColor="#475467"/>
                                         </VerticalStackLayout>
                                         <Label Grid.Column="2"
                                                Text="{Binding Date, StringFormat='{0:MMM dd}'}"
-                                               TextColor="White"
-                                               Opacity="0.8"
-                                               VerticalOptions="Center"/>
+                                               TextColor="#344054"
+                                               VerticalOptions="Start"/>
                                     </Grid>
-                                    <Label Grid.Row="1"
+                                    <Label Grid.Row="1" 
                                            Text="{Binding Description}"
-                                           TextColor="White"
-                                           Opacity="0.9"
-                                           Margin="0,10,0,0"/>
+                                           TextColor="#667085"
+                                           Margin="66,0,0,0"/>
                                 </Grid>
                             </Border>
                         </syncfusion:SfEffectsView>
@@ -134,47 +152,81 @@
             </CollectionView>
 
             <!-- Team Performance Chart -->
-            <Border Stroke="#EAEAEA"
+            <VerticalStackLayout Padding="15,0,15,15">
+                <Border Stroke="#EAEAEA"
                     StrokeShape="RoundRectangle 10"
                     BackgroundColor="White"
-                    Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
-                <VerticalStackLayout Padding="15">
-                    <Label Text="Team Performance" 
-                           FontSize="16" 
-                           FontAttributes="Bold" 
-                           Margin="0,0,0,10"/>
-                    <syncfusion:SfCartesianChart HeightRequest="250">
-                        <syncfusion:SfCartesianChart.Legend>
-                            <syncfusion:ChartLegend/>
-                        </syncfusion:SfCartesianChart.Legend>
-                        <syncfusion:SfCartesianChart.XAxes>
-                            <syncfusion:CategoryAxis>
-                                <syncfusion:CategoryAxis.Title>
-                                    <syncfusion:ChartAxisTitle Text="Member"/>
-                                </syncfusion:CategoryAxis.Title>
-                            </syncfusion:CategoryAxis>
-                        </syncfusion:SfCartesianChart.XAxes>
-                        <syncfusion:SfCartesianChart.YAxes>
-                            <syncfusion:NumericalAxis>
-                                <syncfusion:NumericalAxis.Title>
-                                    <syncfusion:ChartAxisTitle Text="Tasks"/>
-                                </syncfusion:NumericalAxis.Title>
-                            </syncfusion:NumericalAxis>
-                        </syncfusion:SfCartesianChart.YAxes>
-                        <syncfusion:SfCartesianChart.Series>
-                            <syncfusion:ColumnSeries ItemsSource="{Binding TasksCompleted}"
-                                              XBindingPath="Member"
-                                              YBindingPath="Count"
+                    Shadow="{Shadow Brush=#1018280F, Offset='6,6', Radius=6}">
+                    <VerticalStackLayout Padding="15">
+                        <Label Text="Team Performance" 
+                         FontSize="18" TextColor="#101828" FontAttributes="Bold" 
+                         Padding="20,0,20,16"/>
+
+                        <syncfusion:SfCartesianChart HeightRequest="350" PaletteBrushes="{StaticResource PaletteBrushesLight4}">
+                            <syncfusion:SfCartesianChart.Legend>
+                                <syncfusion:ChartLegend/>
+                            </syncfusion:SfCartesianChart.Legend>
+
+                            <syncfusion:SfCartesianChart.XAxes>
+                                <syncfusion:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="False">
+                                    <syncfusion:CategoryAxis.Title>
+                                        <syncfusion:ChartAxisTitle Text="Member" FontSize="12" TextColor="#475467"/>
+                                    </syncfusion:CategoryAxis.Title>
+                                    <syncfusion:CategoryAxis.LabelStyle>
+                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
+                                    </syncfusion:CategoryAxis.LabelStyle>
+                                    <syncfusion:CategoryAxis.MajorTickStyle>
+                                        <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
+                                    </syncfusion:CategoryAxis.MajorTickStyle>
+                                </syncfusion:CategoryAxis>
+                            </syncfusion:SfCartesianChart.XAxes>
+
+                            <syncfusion:SfCartesianChart.YAxes>
+                                <syncfusion:NumericalAxis>
+                                    <syncfusion:NumericalAxis.Title>
+                                        <syncfusion:ChartAxisTitle Text="Tasks" FontSize="12" TextColor="#475467"/>
+                                    </syncfusion:NumericalAxis.Title>
+                                    <syncfusion:NumericalAxis.LabelStyle>
+                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
+                                    </syncfusion:NumericalAxis.LabelStyle>
+                                    <syncfusion:NumericalAxis.MajorTickStyle>
+                                        <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
+                                    </syncfusion:NumericalAxis.MajorTickStyle>
+                                    <syncfusion:NumericalAxis.AxisLineStyle>
+                                        <syncfusion:ChartLineStyle StrokeWidth="0" />
+                                    </syncfusion:NumericalAxis.AxisLineStyle>
+                                </syncfusion:NumericalAxis>
+                            </syncfusion:SfCartesianChart.YAxes>
+                            <syncfusion:SfCartesianChart.Series>
+                                <syncfusion:ColumnSeries ItemsSource="{Binding TasksCompleted}"
+                                              XBindingPath="Member" YBindingPath="Count"
                                               Label="Completed Tasks"
-                                              ShowDataLabels="True"/>
-                            <syncfusion:LineSeries ItemsSource="{Binding TasksInProgress}"
-                                            XBindingPath="Member"
-                                            YBindingPath="Count"
-                                            Label="In Progress"/>
-                        </syncfusion:SfCartesianChart.Series>
-                    </syncfusion:SfCartesianChart>
-                </VerticalStackLayout>
-            </Border>
+                                              ShowDataLabels="True">
+                                    <syncfusion:ColumnSeries.DataLabelSettings>
+                                        <syncfusion:CartesianDataLabelSettings LabelPlacement="Inner">
+                                            <syncfusion:CartesianDataLabelSettings.LabelStyle>
+                                                <syncfusion:ChartDataLabelStyle FontSize="12" TextColor="#101828"/>
+                                            </syncfusion:CartesianDataLabelSettings.LabelStyle>
+                                        </syncfusion:CartesianDataLabelSettings>
+                                    </syncfusion:ColumnSeries.DataLabelSettings>
+                                </syncfusion:ColumnSeries>
+
+                                <syncfusion:ColumnSeries ItemsSource="{Binding TasksInProgress}"
+                                            XBindingPath="Member" YBindingPath="Count" 
+                                            Label="In Progress" ShowDataLabels="True">
+                                    <syncfusion:ColumnSeries.DataLabelSettings>
+                                        <syncfusion:CartesianDataLabelSettings LabelPlacement="Inner">
+                                            <syncfusion:CartesianDataLabelSettings.LabelStyle>
+                                                <syncfusion:ChartDataLabelStyle FontSize="12" TextColor="#101828"/>
+                                            </syncfusion:CartesianDataLabelSettings.LabelStyle>
+                                        </syncfusion:CartesianDataLabelSettings>
+                                    </syncfusion:ColumnSeries.DataLabelSettings>
+                                </syncfusion:ColumnSeries>
+                            </syncfusion:SfCartesianChart.Series>
+                        </syncfusion:SfCartesianChart>
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentView>

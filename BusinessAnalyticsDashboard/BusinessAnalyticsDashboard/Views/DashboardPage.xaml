@@ -5,12 +5,33 @@
              xmlns:local="clr-namespace:BusinessAnalyticsDashboard"
              x:DataType="local:DashboardViewModel"
              xmlns:syncfusion="http://schemas.syncfusion.com/maui/toolkit">
+    
     <ScrollView>
-        <VerticalStackLayout Padding="15" Spacing="15">
+
+        <ScrollView.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <local:ChartColorResources/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </ScrollView.Resources>
+
+        <Grid Padding="15" ColumnSpacing="20" RowSpacing="20">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
             <!-- Quick Stats Cards -->
-            <Grid ColumnDefinitions="*,*" ColumnSpacing="15" RowDefinitions="Auto,Auto" RowSpacing="15">
+            <Grid Grid.Row="0" Grid.ColumnSpan="2" ColumnDefinitions="*,*,*,*" ColumnSpacing="15" >
                 <!-- Revenue Card -->
-                <Border Grid.Column="0" Grid.Row="0" 
+                <Border Grid.Column="0"
                         Stroke="#EAEAEA"
                         StrokeShape="RoundRectangle 10"
                         BackgroundColor="White"
@@ -24,9 +45,6 @@
                                FontSize="24" 
                                FontAttributes="Bold"/>
                         <HorizontalStackLayout Spacing="5">
-                            <Image Source="arrow_up.png" 
-                                   HeightRequest="12" 
-                                   WidthRequest="12"/>
                             <Label Text="12.5% vs last month" 
                                    TextColor="Green" 
                                    FontSize="12"/>
@@ -35,7 +53,7 @@
                 </Border>
 
                 <!-- Orders Card -->
-                <Border Grid.Column="1" Grid.Row="0"
+                <Border Grid.Column="1" 
                         Stroke="#EAEAEA"
                         StrokeShape="RoundRectangle 10"
                         BackgroundColor="White"
@@ -48,9 +66,6 @@
                                FontSize="24" 
                                FontAttributes="Bold"/>
                         <HorizontalStackLayout Spacing="5">
-                            <Image Source="arrow_up.png" 
-                                   HeightRequest="12" 
-                                   WidthRequest="12"/>
                             <Label Text="8.3% vs last month" 
                                    TextColor="Green" 
                                    FontSize="12"/>
@@ -59,7 +74,7 @@
                 </Border>
 
                 <!-- Customers Card -->
-                <Border Grid.Column="0" Grid.Row="1"
+                <Border Grid.Column="2" 
                         Stroke="#EAEAEA"
                         StrokeShape="RoundRectangle 10"
                         BackgroundColor="White"
@@ -72,9 +87,6 @@
                                FontSize="24" 
                                FontAttributes="Bold"/>
                         <HorizontalStackLayout Spacing="5">
-                            <Image Source="arrow_up.png" 
-                                   HeightRequest="12" 
-                                   WidthRequest="12"/>
                             <Label Text="5.2% vs last month" 
                                    TextColor="Green" 
                                    FontSize="12"/>
@@ -83,7 +95,7 @@
                 </Border>
 
                 <!-- Conversion Rate Card -->
-                <Border Grid.Column="1" Grid.Row="1"
+                <Border Grid.Column="3"
                         Stroke="#EAEAEA"
                         StrokeShape="RoundRectangle 10"
                         BackgroundColor="White"
@@ -96,9 +108,6 @@
                                FontSize="24" 
                                FontAttributes="Bold"/>
                         <HorizontalStackLayout Spacing="5">
-                            <Image Source="arrow_down.png" 
-                                   HeightRequest="12" 
-                                   WidthRequest="12"/>
                             <Label Text="2.1% vs last month" 
                                    TextColor="Red" 
                                    FontSize="12"/>
@@ -108,75 +117,111 @@
             </Grid>
 
             <!-- Revenue Trend Chart -->
-            <Border Margin="0,15" 
+            <Border Grid.Row="1" Grid.Column="0" 
                     Stroke="#EAEAEA"
                     StrokeShape="RoundRectangle 10"
                     BackgroundColor="White"
                     Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
-                <VerticalStackLayout Padding="15">
+
+                <VerticalStackLayout Padding="15" VerticalOptions="Fill">
+
                     <Label Text="Revenue Trend" 
-                           FontSize="16" 
-                           FontAttributes="Bold" 
-                           Margin="0,0,0,10"/>
-                    <syncfusion:SfCartesianChart HeightRequest="200">
+                     FontSize="18" TextColor="#101828"
+                     FontAttributes="Bold" 
+                        Padding="20,0,20,16"/>
+
+                    <syncfusion:SfCartesianChart HeightRequest="350">
+
                         <syncfusion:SfCartesianChart.XAxes>
-                            <syncfusion:CategoryAxis>
+                            <syncfusion:CategoryAxis ShowMajorGridLines="False" PlotOffsetStart="6" PlotOffsetEnd="6" >
                                 <syncfusion:CategoryAxis.Title>
-                                    <syncfusion:ChartAxisTitle Text="Month"/>
+                                    <syncfusion:ChartAxisTitle Text="Month" FontSize="12" TextColor="#475467"/>
                                 </syncfusion:CategoryAxis.Title>
+                                <syncfusion:CategoryAxis.LabelStyle>
+                                    <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
+                                </syncfusion:CategoryAxis.LabelStyle>
+                                <syncfusion:CategoryAxis.MajorTickStyle>
+                                    <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
+                                </syncfusion:CategoryAxis.MajorTickStyle>
                             </syncfusion:CategoryAxis>
                         </syncfusion:SfCartesianChart.XAxes>
+
                         <syncfusion:SfCartesianChart.YAxes>
-                            <syncfusion:NumericalAxis>
+                            <syncfusion:NumericalAxis EdgeLabelsDrawingMode="Center" PlotOffsetEnd="10" Minimum="1.6" Interval="0.2">
                                 <syncfusion:NumericalAxis.Title>
-                                    <syncfusion:ChartAxisTitle Text="Revenue ($)"/>
+                                    <syncfusion:ChartAxisTitle Text="Revenue ($)" FontSize="12" TextColor="#475467"/>
                                 </syncfusion:NumericalAxis.Title>
+                                <syncfusion:NumericalAxis.LabelStyle>
+                                    <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12" LabelFormat="0.0'M"/>
+                                </syncfusion:NumericalAxis.LabelStyle>
+                                <syncfusion:NumericalAxis.MajorTickStyle>
+                                    <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
+                                </syncfusion:NumericalAxis.MajorTickStyle>
+                                <syncfusion:NumericalAxis.AxisLineStyle>
+                                    <syncfusion:ChartLineStyle StrokeWidth="0" />
+                                </syncfusion:NumericalAxis.AxisLineStyle>
                             </syncfusion:NumericalAxis>
                         </syncfusion:SfCartesianChart.YAxes>
+
                         <syncfusion:SfCartesianChart.Series>
                             <syncfusion:SplineSeries ItemsSource="{Binding RevenueData}"
-                                               XBindingPath="Month"
-                                               YBindingPath="Value">
+                                               XBindingPath="Month" YBindingPath="Value" ShowMarkers="True"
+                                               Fill="{StaticResource series1Light}" StrokeWidth="4">
+
+                                <syncfusion:SplineSeries.MarkerSettings>
+                                    <syncfusion:ChartMarkerSettings Width="8" Height="8" 
+                                                   Fill="#FFFFFF"  StrokeWidth="4"
+                                                   Stroke="{StaticResource series1Light}"/>
+                                </syncfusion:SplineSeries.MarkerSettings>
                             </syncfusion:SplineSeries>
                         </syncfusion:SfCartesianChart.Series>
+
                     </syncfusion:SfCartesianChart>
+
                 </VerticalStackLayout>
+                
             </Border>
 
             <!-- Sales Target Chart -->
-            <Border Stroke="#EAEAEA"
+            <Border Grid.Row="1" Grid.Column="1" Stroke="#EAEAEA" 
                     StrokeShape="RoundRectangle 10"
                     BackgroundColor="White"
                     Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
+
                 <VerticalStackLayout Padding="15">
                     <Label Text="Sales Target Progress" 
-                           FontSize="16" 
+                           FontSize="18" TextColor="#101828"
                            FontAttributes="Bold" 
-                           Margin="0,0,0,10"/>
-                    <syncfusion:SfCircularChart HeightRequest="200">
+                           Padding="20,0,20,16"/>
+
+                    <syncfusion:SfCircularChart VerticalOptions="CenterAndExpand">
+
+                        <syncfusion:SfCircularChart.Legend>
+                            <syncfusion:ChartLegend Placement="Bottom">
+                               
+                                <syncfusion:ChartLegend.ItemTemplate>
+                                    <DataTemplate >
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="81% of target achieved" TextColor="#475467" FontSize="14"/>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </syncfusion:ChartLegend.ItemTemplate>
+                            </syncfusion:ChartLegend>
+                        </syncfusion:SfCircularChart.Legend>
+                        
                         <syncfusion:SfCircularChart.Series>
-                            <syncfusion:DoughnutSeries ItemsSource="{Binding SalesTargetData}"
-                                                XBindingPath="Category"
-                                                YBindingPath="Value"
-                                                InnerRadius="0.7">
-                                <syncfusion:DoughnutSeries.CenterView>
-                                    <VerticalStackLayout HorizontalOptions="Center" 
-                                                       VerticalOptions="Center">
-                                        <Label Text="{Binding SalesTargetProgress, StringFormat='{0}%'}"
-                                               FontSize="24"
-                                               FontAttributes="Bold"
-                                               HorizontalOptions="Center"/>
-                                        <Label Text="of target"
-                                               FontSize="12"
-                                               TextColor="Gray"
-                                               HorizontalOptions="Center"/>
-                                    </VerticalStackLayout>
-                                </syncfusion:DoughnutSeries.CenterView>
-                            </syncfusion:DoughnutSeries>
+                            <syncfusion:RadialBarSeries ItemsSource="{Binding SalesTargetData}"
+                                           XBindingPath="Category" YBindingPath="Value" InnerRadius="0.4" Radius="1"
+                                           StartAngle="260" EndAngle="620"
+                                           MaximumValue="100" Fill='{StaticResource series1Light}' 
+                                           TrackFill="#EAECF0" >
+                            </syncfusion:RadialBarSeries>
                         </syncfusion:SfCircularChart.Series>
+                        
                     </syncfusion:SfCircularChart>
+                        
                 </VerticalStackLayout>
             </Border>
-        </VerticalStackLayout>
+        </Grid>
     </ScrollView>
 </ContentView>
