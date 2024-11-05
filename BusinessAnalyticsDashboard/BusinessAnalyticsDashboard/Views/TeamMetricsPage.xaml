@@ -162,7 +162,8 @@
                          FontSize="18" TextColor="#101828" FontAttributes="Bold" 
                          Padding="20,0,20,16"/>
 
-                        <syncfusion:SfCartesianChart HeightRequest="350" PaletteBrushes="{StaticResource PaletteBrushesLight4}">
+                        <syncfusion:SfCartesianChart HeightRequest="{OnPlatform WinUI=350, MacCatalyst=500}" PaletteBrushes="{StaticResource PaletteBrushesLight4}">
+
                             <syncfusion:SfCartesianChart.Legend>
                                 <syncfusion:ChartLegend/>
                             </syncfusion:SfCartesianChart.Legend>
