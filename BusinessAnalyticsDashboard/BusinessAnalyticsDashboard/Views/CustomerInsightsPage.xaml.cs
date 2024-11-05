@@ -1,6 +1,3 @@
-#if WINDOWS
-using Microsoft.UI.Xaml.Controls;
-#endif
 namespace BusinessAnalyticsDashboard;
 
 public partial class CustomerInsightsPage : ContentView
