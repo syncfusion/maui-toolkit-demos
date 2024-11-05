@@ -12,6 +12,24 @@
                 <ResourceDictionary.MergedDictionaries>
                     <local:ChartColorResources/>
                 </ResourceDictionary.MergedDictionaries>
+                <Style TargetType="syncfusion:SfTabItem">
+                    <Setter Property="VisualStateManager.VisualStateGroups">
+                        <VisualStateGroupList>
+                            <VisualStateGroup>
+                                <VisualState x:Name="Normal" >
+                                    <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="#667085" />                                        
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="#6941c6" />                                       
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </Setter>
+                </Style>
             </ResourceDictionary>
         </Grid.Resources>
         
@@ -28,7 +46,9 @@
 
         <!-- Tab View -->
         <syncfusion:SfTabView Grid.Row="1" 
-                          IndicatorBackground="{StaticResource Primary}">
+                          x:Name="tabView"
+                          TabWidthMode="SizeToContent"
+                          IndicatorBackground="#6941c6">
             <syncfusion:SfTabView.Items>
                 <!-- Demographics Tab -->
                 <syncfusion:SfTabItem Header="Demographics">
