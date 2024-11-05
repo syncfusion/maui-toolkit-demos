@@ -45,9 +45,6 @@
                                FontSize="24" 
                                FontAttributes="Bold"/>
                         <HorizontalStackLayout Spacing="5">
-                            <Image Source="arrow_up.png" 
-                                   HeightRequest="12" 
-                                   WidthRequest="12"/>
                             <Label Text="12.5% vs last month" 
                                    TextColor="Green" 
                                    FontSize="12"/>
@@ -69,9 +66,6 @@
                                FontSize="24" 
                                FontAttributes="Bold"/>
                         <HorizontalStackLayout Spacing="5">
-                            <Image Source="arrow_up.png" 
-                                   HeightRequest="12" 
-                                   WidthRequest="12"/>
                             <Label Text="8.3% vs last month" 
                                    TextColor="Green" 
                                    FontSize="12"/>
@@ -93,9 +87,6 @@
                                FontSize="24" 
                                FontAttributes="Bold"/>
                         <HorizontalStackLayout Spacing="5">
-                            <Image Source="arrow_up.png" 
-                                   HeightRequest="12" 
-                                   WidthRequest="12"/>
                             <Label Text="5.2% vs last month" 
                                    TextColor="Green" 
                                    FontSize="12"/>
@@ -117,9 +108,6 @@
                                FontSize="24" 
                                FontAttributes="Bold"/>
                         <HorizontalStackLayout Spacing="5">
-                            <Image Source="arrow_down.png" 
-                                   HeightRequest="12" 
-                                   WidthRequest="12"/>
                             <Label Text="2.1% vs last month" 
                                    TextColor="Red" 
                                    FontSize="12"/>
@@ -206,20 +194,9 @@
                            FontAttributes="Bold" 
                            Padding="20,0,20,16"/>
 
+                    <HorizontalStackLayout HorizontalOptions="Center">
                     <syncfusion:SfCircularChart VerticalOptions="CenterAndExpand">
 
-                        <syncfusion:SfCircularChart.Legend>
-                            <syncfusion:ChartLegend Placement="Bottom">
-                               
-                                <syncfusion:ChartLegend.ItemTemplate>
-                                    <DataTemplate >
-                                        <StackLayout Orientation="Horizontal">
-                                            <Label Text="81% of target achieved" TextColor="#475467" FontSize="14"/>
-                                        </StackLayout>
-                                    </DataTemplate>
-                                </syncfusion:ChartLegend.ItemTemplate>
-                            </syncfusion:ChartLegend>
-                        </syncfusion:SfCircularChart.Legend>
                         
                         <syncfusion:SfCircularChart.Series>
                             <syncfusion:RadialBarSeries ItemsSource="{Binding SalesTargetData}"
@@ -231,7 +208,17 @@
                         </syncfusion:SfCircularChart.Series>
                         
                     </syncfusion:SfCircularChart>
-                        
+
+                        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                            <Label Text="•"
+                                   HorizontalOptions="Center"
+                                FontSize="15"
+                                TextColor="#475467"
+                                VerticalOptions="Center"/>
+                            <Label Text="81% of target achieved" TextColor="#475467" FontSize="14"/>
+                        </HorizontalStackLayout>
+                    </HorizontalStackLayout>
+
                 </VerticalStackLayout>
             </Border>
         </Grid>
