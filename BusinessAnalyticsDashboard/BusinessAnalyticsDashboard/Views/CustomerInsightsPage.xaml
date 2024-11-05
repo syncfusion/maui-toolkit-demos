@@ -246,7 +246,7 @@
                                                         <syncfusion:CartesianDataLabelSettings>
                                                             <syncfusion:CartesianDataLabelSettings.LabelStyle>
                                                                 <syncfusion:ChartDataLabelStyle FontSize="12" Background="#ECFDF3"
-                                                                      TextColor="{StaticResource series3Light}" Stroke="#ABEFC6" StrokeWidth="1"/>
+                                                                      TextColor="#079455" Stroke="#ABEFC6" StrokeWidth="1"/>
                                                             </syncfusion:CartesianDataLabelSettings.LabelStyle>
                                                         </syncfusion:CartesianDataLabelSettings>
                                                     </syncfusion:LineSeries.DataLabelSettings>
@@ -347,7 +347,7 @@
                                                         <syncfusion:CartesianDataLabelSettings>
                                                             <syncfusion:CartesianDataLabelSettings.LabelStyle>
                                                                 <syncfusion:ChartDataLabelStyle FontSize="12" Background="#ECFDF3"
-                                                                        TextColor="{StaticResource series3Light}" Stroke="#ABEFC6" StrokeWidth="1"/>
+                                                                        TextColor="#079455" Stroke="#ABEFC6" StrokeWidth="1"/>
                                                             </syncfusion:CartesianDataLabelSettings.LabelStyle>
                                                         </syncfusion:CartesianDataLabelSettings>
                                                     </syncfusion:LineSeries.DataLabelSettings>
