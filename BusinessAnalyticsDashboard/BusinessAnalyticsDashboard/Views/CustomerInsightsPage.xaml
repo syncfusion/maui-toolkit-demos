@@ -6,29 +6,16 @@
              x:DataType="local:CustomerInsightsViewModel"
              x:Class="BusinessAnalyticsDashboard.CustomerInsightsPage">
     <Grid RowDefinitions="Auto,*">
+
         <Grid.Resources>
             <ResourceDictionary>
-                <Style TargetType="syncfusion:SfTabItem">
-                    <Setter Property="VisualStateManager.VisualStateGroups">
-                        <VisualStateGroupList>
-                            <VisualStateGroup>
-                                <VisualState x:Name="Normal" >
-                                    <VisualState.Setters>
-                                        <Setter Property="TextColor" Value="#667085" />                                        
-                                    </VisualState.Setters>
-                                </VisualState>
-                                <VisualState x:Name="Selected">
-                                    <VisualState.Setters>
-                                        <Setter Property="TextColor" Value="#6941c6" />                                       
-                                    </VisualState.Setters>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateGroupList>
-                    </Setter>
-                </Style>
+                <ResourceDictionary.MergedDictionaries>
+                    <local:ChartColorResources/>
+                </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
         </Grid.Resources>
-            <!-- Filter Chips -->
+        
+        <!-- Filter Chips -->
         <syncfusion:SfChipGroup x:Name="filterChips"
                           ChipType="Choice"
                           ItemsSource="{Binding FilterOptions}"
@@ -41,9 +28,7 @@
 
         <!-- Tab View -->
         <syncfusion:SfTabView Grid.Row="1" 
-                          x:Name="tabView"
-                          TabWidthMode="SizeToContent"
-                          IndicatorBackground="#6941c6">
+                          IndicatorBackground="{StaticResource Primary}">
             <syncfusion:SfTabView.Items>
                 <!-- Demographics Tab -->
                 <syncfusion:SfTabItem Header="Demographics">
@@ -93,7 +78,7 @@
                                                         <syncfusion:ChartAxisTitle Text="Region" FontSize="12" TextColor="#475467"/>
                                                     </syncfusion:CategoryAxis.Title>
                                                     <syncfusion:CategoryAxis.LabelStyle>
-                                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12" LabelFormat="#.##"/>
+                                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
                                                     </syncfusion:CategoryAxis.LabelStyle>
                                                     <syncfusion:CategoryAxis.MajorTickStyle>
                                                         <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
@@ -163,7 +148,7 @@
                                                         <syncfusion:ChartAxisTitle Text="Stage" FontSize="12" TextColor="#475467"/>
                                                     </syncfusion:CategoryAxis.Title>
                                                     <syncfusion:CategoryAxis.LabelStyle>
-                                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12" LabelFormat="#.##"/>
+                                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
                                                     </syncfusion:CategoryAxis.LabelStyle>
                                                     <syncfusion:CategoryAxis.MajorTickStyle>
                                                         <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
@@ -222,7 +207,7 @@
                                                         <syncfusion:ChartAxisTitle Text="Month" FontSize="12" TextColor="#475467"/>
                                                     </syncfusion:CategoryAxis.Title>
                                                     <syncfusion:CategoryAxis.LabelStyle>
-                                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12" LabelFormat="#.##"/>
+                                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
                                                     </syncfusion:CategoryAxis.LabelStyle>
                                                     <syncfusion:CategoryAxis.MajorTickStyle>
                                                         <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
@@ -323,7 +308,7 @@
                                                         <syncfusion:ChartAxisTitle Text="Month" FontSize="12" TextColor="#475467"/>
                                                     </syncfusion:CategoryAxis.Title>
                                                     <syncfusion:CategoryAxis.LabelStyle>
-                                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12" LabelFormat="#.##"/>
+                                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
                                                     </syncfusion:CategoryAxis.LabelStyle>
                                                     <syncfusion:CategoryAxis.MajorTickStyle>
                                                         <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
