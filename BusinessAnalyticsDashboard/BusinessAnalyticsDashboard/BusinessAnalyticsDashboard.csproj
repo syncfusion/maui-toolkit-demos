@@ -69,10 +69,4 @@
 		<PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.0.1" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <MauiXaml Update="Resources\Styles\ChartColorResources.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	</ItemGroup>
-
 </Project>
