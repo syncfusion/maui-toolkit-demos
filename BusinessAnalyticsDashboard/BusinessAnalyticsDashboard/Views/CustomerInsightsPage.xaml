@@ -8,28 +8,28 @@
     <Grid RowDefinitions="Auto,*">
 
         <Grid.Resources>
+            <Style TargetType="syncfusion:SfTabItem">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup>
+                            <VisualState x:Name="Normal" >
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="#667085" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="#6941c6" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
             <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>
                     <local:ChartColorResources/>
-                </ResourceDictionary.MergedDictionaries>
-                <Style TargetType="syncfusion:SfTabItem">
-                    <Setter Property="VisualStateManager.VisualStateGroups">
-                        <VisualStateGroupList>
-                            <VisualStateGroup>
-                                <VisualState x:Name="Normal" >
-                                    <VisualState.Setters>
-                                        <Setter Property="TextColor" Value="#667085" />                                        
-                                    </VisualState.Setters>
-                                </VisualState>
-                                <VisualState x:Name="Selected">
-                                    <VisualState.Setters>
-                                        <Setter Property="TextColor" Value="#6941c6" />                                       
-                                    </VisualState.Setters>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateGroupList>
-                    </Setter>
-                </Style>
+                </ResourceDictionary.MergedDictionaries>                
             </ResourceDictionary>
         </Grid.Resources>
         
