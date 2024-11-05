@@ -34,7 +34,7 @@
                 <syncfusion:SfTabItem Header="Demographics">
                     <syncfusion:SfTabItem.Content>
                         <ScrollView>
-                            <Grid Padding="15" ColumnSpacing="15" ColumnDefinitions="*,*">
+                            <Grid Padding="15" ColumnSpacing="15" ColumnDefinitions="*,*" RowDefinitions="{OnPlatform WinUI=*, MacCatalyst='8*,2*'}">
                                 <!-- Age Distribution -->
                                 <Border Grid.Column="0" Stroke="#EAEAEA"
                                         StrokeShape="RoundRectangle 10"
@@ -128,7 +128,7 @@
                 <syncfusion:SfTabItem Header="Behavior">
                     <syncfusion:SfTabItem.Content>
                         <ScrollView>
-                            <Grid Padding="15" ColumnSpacing="15" ColumnDefinitions="*,*">
+                            <Grid Padding="15" ColumnSpacing="15" ColumnDefinitions="*,*" RowDefinitions="{OnPlatform WinUI=*, MacCatalyst='8*,2*'}">
                                 <!-- Customer Journey (Alternative to Funnel) -->
                                 <Border Grid.Column="0" Stroke="#EAEAEA"
                                         StrokeShape="RoundRectangle 10"
@@ -264,7 +264,7 @@
                 <syncfusion:SfTabItem Header="Feedback">
                     <syncfusion:SfTabItem.Content>
                         <ScrollView>
-                            <Grid Padding="15" ColumnSpacing="15" ColumnDefinitions="*,*">
+                            <Grid Padding="15" ColumnSpacing="15" ColumnDefinitions="*,*" RowDefinitions="{OnPlatform WinUI=*, MacCatalyst='8*,2*'}">
                                 <!-- Customer Satisfaction -->
                                 <Border Grid.Column="0" Stroke="#EAEAEA"
                                         StrokeShape="RoundRectangle 10"
