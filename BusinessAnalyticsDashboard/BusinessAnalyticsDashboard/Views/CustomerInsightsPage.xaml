@@ -60,12 +60,14 @@
                                         StrokeShape="RoundRectangle 10"
                                         BackgroundColor="White"
                                         Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
-                                    <VerticalStackLayout Padding="15">
-                                        <Label Text="Age Distribution" 
-                                              FontSize="18" TextColor="#101828" FontAttributes="Bold" 
-                                              Padding="20,0,20,16"/>
-                                        <syncfusion:SfCircularChart SizeChanged="SfChart_SizeChanged">
-                                            
+                                    <AbsoluteLayout Padding="10">
+                                        <syncfusion:SfCircularChart VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                                            <syncfusion:SfCircularChart.Title>
+                                                <Label Text="Age Distribution"  
+                                                       FontSize="18" TextColor="#101828" 
+                                                       FontAttributes="Bold"  
+                                                       Margin="0,0,20,16"/>
+                                            </syncfusion:SfCircularChart.Title>
                                             <syncfusion:SfCircularChart.Legend>
                                                 <syncfusion:ChartLegend Placement="Bottom"/>
                                             </syncfusion:SfCircularChart.Legend>
@@ -78,7 +80,7 @@
                                                 </syncfusion:DoughnutSeries>
                                             </syncfusion:SfCircularChart.Series>
                                         </syncfusion:SfCircularChart>
-                                    </VerticalStackLayout>
+                                    </AbsoluteLayout>
                                 </Border>
 
                                 <!-- Geographic Distribution -->
@@ -86,12 +88,13 @@
                                         StrokeShape="RoundRectangle 10"
                                         BackgroundColor="White"
                                         Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
-                                    <VerticalStackLayout Padding="15">
-                                        <Label Text="Customer Distribution" 
+                                    <AbsoluteLayout Padding="10">
+                                        <syncfusion:SfCartesianChart VerticalOptions="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                                            <syncfusion:SfCartesianChart.Title>
+                                                <Label Text="Customer Distribution"
                                              FontSize="18" TextColor="#101828" FontAttributes="Bold" 
-                                             Padding="20,0,20,16"/>
-                                        <syncfusion:SfCartesianChart SizeChanged="SfChart_SizeChanged">
-                                            
+                                             Margin="0,0,20,16"/>
+                                            </syncfusion:SfCartesianChart.Title>
                                             <syncfusion:SfCartesianChart.XAxes>
                                                 <syncfusion:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="False">
                                                     <syncfusion:CategoryAxis.Title>
@@ -137,7 +140,7 @@
                                                 </syncfusion:ColumnSeries>
                                             </syncfusion:SfCartesianChart.Series>
                                         </syncfusion:SfCartesianChart>
-                                    </VerticalStackLayout>
+                                    </AbsoluteLayout>
                                 </Border>
                             </Grid>
                         </ScrollView>
@@ -155,13 +158,11 @@
                                         BackgroundColor="White"
                                         Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
                                     
-                                    <VerticalStackLayout Padding="15">
-                                        <Label Text="Customer Journey" 
-                                               FontSize="18" TextColor="#101828" FontAttributes="Bold" 
-                                               Padding="20,0,20,16"/>
-
-                                        <syncfusion:SfCartesianChart SizeChanged="SfChart_SizeChanged">
-                                            
+                                    <AbsoluteLayout Padding="10">
+                                        <syncfusion:SfCartesianChart AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                                            <syncfusion:SfCartesianChart.Title>
+                                                <Label Text="Customer Journey" FontSize="18" TextColor="#101828" FontAttributes="Bold" Margin="0,0,20,16"/>
+                                            </syncfusion:SfCartesianChart.Title>
                                             <syncfusion:SfCartesianChart.XAxes>
                                                 <syncfusion:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="False">
                                                     <syncfusion:CategoryAxis.Title>
@@ -207,7 +208,7 @@
                                                 </syncfusion:ColumnSeries>
                                             </syncfusion:SfCartesianChart.Series>
                                         </syncfusion:SfCartesianChart>
-                                    </VerticalStackLayout>
+                                    </AbsoluteLayout>
                                 </Border>
 
                                 <!-- Purchase Frequency -->
@@ -215,12 +216,12 @@
                                         StrokeShape="RoundRectangle 10"
                                         BackgroundColor="White"
                                         Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
-                                    <VerticalStackLayout Padding="15">
-                                        <Label Text="Purchase Frequency" 
-                                               FontSize="18" TextColor="#101828" FontAttributes="Bold" 
-                                               Padding="20,0,20,16"/>
-                                        <syncfusion:SfCartesianChart SizeChanged="SfChart_SizeChanged">
-                                            
+                                    <AbsoluteLayout Padding="15">
+
+                                        <syncfusion:SfCartesianChart AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                                            <syncfusion:SfCartesianChart.Title>
+                                                <Label Text="Purchase Frequency" FontSize="18" TextColor="#101828" FontAttributes="Bold" Margin="0,0,20,16"/>
+                                            </syncfusion:SfCartesianChart.Title>
                                             <syncfusion:SfCartesianChart.XAxes>
                                                 <syncfusion:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="False">
                                                     <syncfusion:CategoryAxis.Title>
@@ -273,7 +274,7 @@
                                                 </syncfusion:LineSeries>
                                             </syncfusion:SfCartesianChart.Series>
                                         </syncfusion:SfCartesianChart>
-                                    </VerticalStackLayout>
+                                    </AbsoluteLayout>
                                 </Border>
                             </Grid>
                         </ScrollView>
@@ -284,18 +285,22 @@
                 <syncfusion:SfTabItem Header="Feedback">
                     <syncfusion:SfTabItem.Content>
                         <ScrollView>
-                            <Grid Padding="15" ColumnSpacing="15" ColumnDefinitions="*,*" RowDefinitions="{OnPlatform WinUI=*, MacCatalyst='8*,2*'}">
+                            <Grid Padding="15" ColumnSpacing="15" 
+                                  ColumnDefinitions="*,*" 
+                                  RowDefinitions="{OnPlatform WinUI=*, MacCatalyst='8*,2*'}">
                                 <!-- Customer Satisfaction -->
                                 <Border Grid.Column="0" Stroke="#EAEAEA"
                                         StrokeShape="RoundRectangle 10"
                                         BackgroundColor="White"
                                         Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
-                                    <VerticalStackLayout Padding="15">
-                                        <Label Text="Customer Satisfaction" 
-                                              FontSize="18" TextColor="#101828" FontAttributes="Bold" 
-                                              Padding="20,0,20,16"/>
-                                        <syncfusion:SfCircularChart SizeChanged="SfChart_SizeChanged">
-                                            
+                                    <AbsoluteLayout Padding="10">
+                                       
+                                        <syncfusion:SfCircularChart  AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                                            <syncfusion:SfCircularChart.Title>
+                                                <Label Text="Customer Satisfaction" 
+                                                       FontSize="18" TextColor="#101828" FontAttributes="Bold" 
+                                                       Margin="0,0,20,16"/>
+                                            </syncfusion:SfCircularChart.Title>
                                             <syncfusion:SfCircularChart.Legend>
                                                 <syncfusion:ChartLegend Placement="Bottom"/>
                                             </syncfusion:SfCircularChart.Legend>
@@ -308,7 +313,7 @@
                                                 </syncfusion:DoughnutSeries>
                                             </syncfusion:SfCircularChart.Series>
                                         </syncfusion:SfCircularChart>
-                                    </VerticalStackLayout>
+                                    </AbsoluteLayout>
                                 </Border>
 
                                 <!-- Feedback Trends -->
@@ -316,13 +321,15 @@
                                         StrokeShape="RoundRectangle 10"
                                         BackgroundColor="White"
                                         Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
-                                    <VerticalStackLayout Padding="15">
-                                        <Label Text="Feedback Trends" 
-                                              FontSize="18" TextColor="#101828" FontAttributes="Bold" 
-                                               Padding="20,0,20,16"/>
-                                        <syncfusion:SfCartesianChart SizeChanged="SfChart_SizeChanged">
-                                            
-                                            <syncfusion:SfCartesianChart.XAxes>
+                                    <AbsoluteLayout Padding="10">
+
+                                        <syncfusion:SfCartesianChart AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                                            <syncfusion:SfCartesianChart.Title>
+                                                <Label Text="Feedback Trends" 
+                                                       FontSize="18" TextColor="#101828" FontAttributes="Bold" 
+                                                       Margin="0,0,20,16"/>
+                                            </syncfusion:SfCartesianChart.Title>
+                                        <syncfusion:SfCartesianChart.XAxes>
                                                 <syncfusion:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="False">
                                                     <syncfusion:CategoryAxis.Title>
                                                         <syncfusion:ChartAxisTitle Text="Month" FontSize="12" TextColor="#475467"/>
@@ -374,7 +381,7 @@
                                                 </syncfusion:LineSeries>
                                             </syncfusion:SfCartesianChart.Series>
                                         </syncfusion:SfCartesianChart>
-                                    </VerticalStackLayout>
+                                    </AbsoluteLayout>
                                 </Border>
                             </Grid>
                         </ScrollView>

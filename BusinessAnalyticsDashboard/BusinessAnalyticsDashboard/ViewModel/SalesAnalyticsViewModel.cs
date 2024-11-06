@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
 namespace BusinessAnalyticsDashboard
 {
@@ -189,10 +184,10 @@ namespace BusinessAnalyticsDashboard
             // Load Regional Sales Data
             RegionalSales = new List<RegionalSalesData>
             {
-                new RegionalSalesData { Region = "North", Value = 285000 },
-                new RegionalSalesData { Region = "South", Value = 245000 },
-                new RegionalSalesData { Region = "East", Value = 265000 },
-                new RegionalSalesData { Region = "West", Value = 255000 }
+                new RegionalSalesData { Region = "North", Value = 2.85 },
+                new RegionalSalesData { Region = "South", Value = 2.45 },
+                new RegionalSalesData { Region = "East", Value = 2.65 },
+                new RegionalSalesData { Region = "West", Value = 2.55 }
             };
 
             // Load Product Performance Data

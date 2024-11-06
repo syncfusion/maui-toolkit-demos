@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-
-namespace BusinessAnalyticsDashboard
+﻿namespace BusinessAnalyticsDashboard
 {
     public class CustomerInsightsViewModel : BindableObject
     {
@@ -121,12 +114,12 @@ namespace BusinessAnalyticsDashboard
         public CustomerInsightsViewModel()
         {
             InitializeData();
-            if(AgeDistribution == null) return;
-            if(GeographicDistribution == null) return;
-            if(CustomerJourney == null) return;
-            if(CustomerSatisfaction == null) return;
-            if(PurchaseFrequency == null) return;
-            if(FeedbackTrends == null) return;
+            if (AgeDistribution == null) return;
+            if (GeographicDistribution == null) return;
+            if (CustomerJourney == null) return;
+            if (CustomerSatisfaction == null) return;
+            if (PurchaseFrequency == null) return;
+            if (FeedbackTrends == null) return;
 
             // Store original data for reset
             _originalAgeDistribution = new List<ChartData>(AgeDistribution);
@@ -137,9 +130,9 @@ namespace BusinessAnalyticsDashboard
             _originalFeedbackTrends = new List<FeedbackTrendData>(FeedbackTrends);
 
             InitializeFilterOptions();
-           
 
-           
+
+
         }
         #endregion
 
@@ -224,11 +217,11 @@ namespace BusinessAnalyticsDashboard
         private void UpdateDataBasedOnFilter(string? filter)
         {
             if (_originalAgeDistribution == null) return;
-            if(_originalGeographicDistribution == null) return ;
-            if(_originalCustomerSatisfaction == null) return;
-            if(_originalCustomerJourney == null) return;
-            if(_originalPurchaseFrequency == null) return;
-            if(_originalFeedbackTrends == null) return;
+            if (_originalGeographicDistribution == null) return;
+            if (_originalCustomerSatisfaction == null) return;
+            if (_originalCustomerJourney == null) return;
+            if (_originalPurchaseFrequency == null) return;
+            if (_originalFeedbackTrends == null) return;
             if (filter == "All")
             {
                 // Reset to original data
@@ -260,35 +253,35 @@ namespace BusinessAnalyticsDashboard
             AgeDistribution = _originalAgeDistribution?.Select(x => new ChartData
             {
                 Category = x.Category,
-                Value = x.Value * modifier * (0.9 + random.NextDouble() * 0.2)
+                Value = Math.Round(x.Value * modifier * (0.9 + random.NextDouble() * 0.2))
             }).ToList();
 
             // Update Geographic Distribution
             GeographicDistribution = _originalGeographicDistribution?.Select(x => new ChartData
             {
                 Region = x.Region,
-                Value = x.Value * modifier * (0.9 + random.NextDouble() * 0.2)
+                Value = Math.Round(x.Value * modifier * (0.9 + random.NextDouble() * 0.2))
             }).ToList();
 
             // Update Customer Journey
             CustomerJourney = _originalCustomerJourney?.Select(x => new ChartData
             {
                 Stage = x.Stage,
-                Value = x.Value * modifier * (0.9 + random.NextDouble() * 0.2)
+                Value = Math.Round(x.Value * modifier * (0.9 + random.NextDouble() * 0.2))
             }).ToList();
 
             // Update Purchase Frequency
             PurchaseFrequency = _originalPurchaseFrequency?.Select(x => new ChartData
             {
                 Month = x.Month,
-                Value = x.Value * modifier * (0.9 + random.NextDouble() * 0.2)
+                Value = Math.Round(x.Value * modifier * (0.9 + random.NextDouble() * 0.2))
             }).ToList();
 
             // Update Customer Satisfaction
             CustomerSatisfaction = _originalCustomerSatisfaction?.Select(x => new ChartData
             {
                 Category = x.Category,
-                Value = x.Value * modifier * (0.9 + random.NextDouble() * 0.2)
+                Value = Math.Round(x.Value * modifier * (0.9 + random.NextDouble() * 0.2))
             }).ToList();
 
             // Update Feedback Trends
