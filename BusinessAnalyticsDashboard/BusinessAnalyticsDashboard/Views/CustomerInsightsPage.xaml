@@ -87,7 +87,7 @@
                                         BackgroundColor="White"
                                         Shadow="{Shadow Brush={StaticResource Gray300}, Offset='4,4', Radius=10}">
                                     <VerticalStackLayout Padding="15">
-                                        <Label Text="Revenue Trend" 
+                                        <Label Text="Customer Distribution" 
                                              FontSize="18" TextColor="#101828" FontAttributes="Bold" 
                                              Padding="20,0,20,16"/>
                                         <syncfusion:SfCartesianChart SizeChanged="SfChart_SizeChanged">
@@ -238,7 +238,7 @@
                                             <syncfusion:SfCartesianChart.YAxes>
                                                 <syncfusion:NumericalAxis PlotOffsetEnd="15">
                                                     <syncfusion:NumericalAxis.Title>
-                                                        <syncfusion:ChartAxisTitle Text="Ratings" FontSize="12" TextColor="#475467"/>
+                                                        <syncfusion:ChartAxisTitle Text="Units" FontSize="12" TextColor="#475467"/>
                                                     </syncfusion:NumericalAxis.Title>
                                                     <syncfusion:NumericalAxis.LabelStyle>
                                                         <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
