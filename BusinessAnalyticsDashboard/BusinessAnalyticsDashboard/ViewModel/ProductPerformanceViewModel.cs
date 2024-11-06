@@ -16,8 +16,8 @@ namespace BusinessAnalyticsDashboard
         private List<ProductAttributeData>? _selectedProductAttributes;
         private List<SalesTrendData>? _salesTrend;
         private Dictionary<int, List<SalesTrendData>> _periodSalesCache;
-        private string _name;
-        private string _revenue;
+        private string? _name;
+        private string? _revenue;
         #endregion
 
         #region Public Properties
