@@ -43,7 +43,7 @@
                     Shadow="{Shadow Brush=Transparent, Offset='4,4', Radius=10}">
                 <VerticalStackLayout Padding="15">
                     <Label Text="Top Performing Products"
-                           FontSize="16" 
+                           FontSize="18" 
                            FontAttributes="Bold" 
                            Margin="0,0,0,10"/>
                     <syncfusion:SfCarousel x:Name="productsCarousel" RotationAngle="10"
@@ -54,35 +54,29 @@
                         <syncfusion:SfCarousel.ItemTemplate>
                             <DataTemplate x:DataType="local:ProductData">
                                 <Border Shadow="{Shadow Brush=LightGray, Offset='4,4', Radius=10}" Padding="10" Background="White">
-                                    <Grid RowDefinitions="6*,5*">
                                         <Image Grid.Row="0" Source="{Binding Image}" Aspect="AspectFit"/>
-                                        <VerticalStackLayout Grid.Row="1" Padding="10">
-                                            <Label Text="{Binding Name}"
-                                               TextColor="#252C32"
-                                               FontSize="14"/>
-                                            <Label Text="{Binding Revenue, StringFormat='${0:N0}'}"
-                                               TextColor="#252C32" FontAttributes="Bold"
-                                               FontSize="18"
-                                               Margin="0,5"/>
-                                            <Label Text="{Binding Growth, StringFormat='{0}% Growth'}"
-                                               TextColor="#079455" FontSize="14"/>
-                                            <HorizontalStackLayout Spacing="5"
-                                                             Margin="0,5,0,0">
-                                                <Label Text="⭐⭐⭐⭐⭐" TextColor="#F8C51B" FontSize="Large"/>
-                                                <Label Text="{Binding Rating}"
-                                                       TextColor="#5B6871" 
-                                                       WidthRequest="22" 
-                                                       HeightRequest="16"
-                                                       FontSize="14"/>
-                                            </HorizontalStackLayout>
-                                        </VerticalStackLayout>
-                                    </Grid>
                                 </Border>
                             </DataTemplate>
                         </syncfusion:SfCarousel.ItemTemplate>
                     </syncfusion:SfCarousel>
+
+                    <VerticalStackLayout Padding="10" HorizontalOptions="Center">
+                        <Label Text="{Binding Name}"
+           TextColor="#252C32"
+           FontSize="14"/>
+           <HorizontalStackLayout>
+            <Label Text="Total Revenue:   " TextColor="#252C32" FontAttributes="Bold"
+           FontSize="18"
+           Margin="0,5"/>
+                        <Label Text="{Binding Revenue, StringFormat='${0:N0}'}"
+           TextColor="#252C32" FontAttributes="Bold"
+           FontSize="18"
+           Margin="0,5"/>
+           </HorizontalStackLayout>
+                    </VerticalStackLayout>
                 </VerticalStackLayout>
             </Border>
+
 
             <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
                 <!-- Product Attributes Radar Chart (Alternative to Polar) -->

@@ -16,6 +16,8 @@ namespace BusinessAnalyticsDashboard
         private List<ProductAttributeData>? _selectedProductAttributes;
         private List<SalesTrendData>? _salesTrend;
         private Dictionary<int, List<SalesTrendData>> _periodSalesCache;
+        private string _name;
+        private string _revenue;
         #endregion
 
         #region Public Properties
@@ -83,6 +85,26 @@ namespace BusinessAnalyticsDashboard
             set
             {
                 _salesTrend = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string? Name
+        {
+            get => _name;
+            set
+            {
+                _name = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string? Revenue
+        {
+            get => _revenue;
+            set
+            {
+                _revenue = value;
                 OnPropertyChanged();
             }
         }
@@ -209,6 +231,8 @@ namespace BusinessAnalyticsDashboard
             if (TopProducts != null && TopProducts.Count > SelectedProductIndex)
             {
                 SelectedProductAttributes = TopProducts[SelectedProductIndex].Attributes;
+                Name = TopProducts[SelectedProductIndex].Name;
+                Revenue = TopProducts[SelectedProductIndex].Revenue.ToString();
                 UpdateDataForTimePeriod(); // Refresh sales data for selected product
             }
         }
