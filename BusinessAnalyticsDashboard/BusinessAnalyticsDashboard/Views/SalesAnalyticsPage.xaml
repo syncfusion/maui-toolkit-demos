@@ -107,7 +107,7 @@
                                             <syncfusion:NumericalAxis.LabelStyle>
                                                 <syncfusion:ChartAxisLabelStyle TextColor="#475467"
                                                                                 FontSize="12"
-                                                                                LabelFormat="0'M" />
+                                                                                LabelFormat="0.0'M" />
                                             </syncfusion:NumericalAxis.LabelStyle>
                                             <syncfusion:NumericalAxis.MajorTickStyle>
                                                 <syncfusion:ChartAxisTickStyle Stroke="Transparent"
@@ -263,7 +263,7 @@
                             Shadow="{Shadow Brush={StaticResource Gray300}, Offset='2,2', Radius=4, Opacity=0.3}">
                         <Grid>
                             <VerticalStackLayout Padding="15">
-                                <Label Text="Sales distribution Period"
+                                <Label Text="Sales by Region"
                                        FontSize="18"
                                        FontAttributes="Bold"
                                        Margin="0,0,0,10" />
@@ -284,7 +284,7 @@
                                             <syncfusion:DoughnutSeries.DataLabelSettings>
                                                 <syncfusion:CircularDataLabelSettings>
                                                     <syncfusion:CircularDataLabelSettings.LabelStyle>
-                                                        <syncfusion:ChartDataLabelStyle LabelFormat="#,###" />
+                                                        <syncfusion:ChartDataLabelStyle LabelFormat="0.0'M" />
                                                     </syncfusion:CircularDataLabelSettings.LabelStyle>
                                                 </syncfusion:CircularDataLabelSettings>
                                             </syncfusion:DoughnutSeries.DataLabelSettings>
@@ -345,7 +345,7 @@
                                             <syncfusion:NumericalAxis.LabelStyle>
                                                 <syncfusion:ChartAxisLabelStyle TextColor="#475467"
                                                                                 FontSize="12"
-                                                                                LabelFormat="0'M" />
+                                                                               LabelFormat="0.0'M" />
                                             </syncfusion:NumericalAxis.LabelStyle>
                                             <syncfusion:NumericalAxis.MajorTickStyle>
                                                 <syncfusion:ChartAxisTickStyle Stroke="Transparent"
