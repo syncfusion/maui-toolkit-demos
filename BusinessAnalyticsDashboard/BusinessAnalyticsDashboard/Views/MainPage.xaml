@@ -42,7 +42,7 @@
                                    VerticalOptions="Center"/>
                                 <syncfusion:SfEffectsView.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding NavigateCommand}" 
-                                                      CommandParameter="Dashboard"/>
+                                                      CommandParameter="Overview"/>
                                 </syncfusion:SfEffectsView.GestureRecognizers>
                             </syncfusion:SfEffectsView>
 
