@@ -36,7 +36,7 @@
                     <ScrollView>
                         <VerticalStackLayout Padding="10,0,0,0" >
                             <!-- Menu Items -->
-                            <syncfusion:SfEffectsView  Padding="10,1,0,1"  SelectionBackground="#EAECF0"
+                            <syncfusion:SfEffectsView RippleAnimationDuration="200" Padding="10,1,0,1"  SelectionBackground="#EAECF0"
                                                       HeightRequest="40">
                                 <Label Text="Dashboard" 
                                    VerticalOptions="Center"/>
@@ -46,7 +46,7 @@
                                 </syncfusion:SfEffectsView.GestureRecognizers>
                             </syncfusion:SfEffectsView>
 
-                            <syncfusion:SfEffectsView Padding="10,1,0,1" SelectionBackground="#EAECF0"
+                            <syncfusion:SfEffectsView RippleAnimationDuration="200" Padding="10,1,0,1" SelectionBackground="#EAECF0"
                                                       HeightRequest="40">
                                 <Label Text="Sales Analytics" 
                                    VerticalOptions="Center"/>
@@ -56,7 +56,7 @@
                                 </syncfusion:SfEffectsView.GestureRecognizers>
                             </syncfusion:SfEffectsView>
 
-                            <syncfusion:SfEffectsView Padding="10,1,0,1" SelectionBackground="#EAECF0"
+                            <syncfusion:SfEffectsView RippleAnimationDuration="200" Padding="10,1,0,1" SelectionBackground="#EAECF0"
                                                       HeightRequest="40">
                                 <Label Text="Customer Insights" 
                                    VerticalOptions="Center"/>
@@ -66,7 +66,7 @@
                                 </syncfusion:SfEffectsView.GestureRecognizers>
                             </syncfusion:SfEffectsView>
 
-                            <syncfusion:SfEffectsView  Padding="10,1,0,1" SelectionBackground="#EAECF0"
+                            <syncfusion:SfEffectsView RippleAnimationDuration="200" Padding="10,1,0,1" SelectionBackground="#EAECF0"
                                                       HeightRequest="40">
                                 <Label Text="Product Performance" 
                                    VerticalOptions="Center"/>
@@ -76,7 +76,7 @@
                                 </syncfusion:SfEffectsView.GestureRecognizers>
                             </syncfusion:SfEffectsView>
 
-                            <syncfusion:SfEffectsView Padding="10,1,0,1" SelectionBackground="#EAECF0"
+                            <syncfusion:SfEffectsView RippleAnimationDuration="200" Padding="10,1,0,1" SelectionBackground="#EAECF0"
                                                       HeightRequest="40">
                                 <Label Text="Team Metrics" 
                                    VerticalOptions="Center"/>
@@ -91,7 +91,7 @@
                                 Opacity="0.3" 
                                 Margin="0,10"/>
 
-                            <syncfusion:SfEffectsView Padding="10,1,0,1" SelectionBackground="#EAECF0"
+                            <!--<syncfusion:SfEffectsView RippleAnimationDuration="200" Padding="10,1,0,1" SelectionBackground="#EAECF0"
                                                       HeightRequest="40">
                                 <Label Text="Settings" 
                                    VerticalOptions="Center"/>
@@ -99,7 +99,7 @@
                                     <TapGestureRecognizer Command="{Binding NavigateCommand}" 
                                                       CommandParameter="Settings"/>
                                 </syncfusion:SfEffectsView.GestureRecognizers>
-                            </syncfusion:SfEffectsView>
+                            </syncfusion:SfEffectsView>-->
                         </VerticalStackLayout>
                     </ScrollView>
                 </syncfusion:DrawerSettings.DrawerContentView>
