@@ -16,6 +16,8 @@ namespace BusinessAnalyticsDashboard
         private List<ProductAttributeData>? _selectedProductAttributes;
         private List<SalesTrendData>? _salesTrend;
         private Dictionary<int, List<SalesTrendData>> _periodSalesCache;
+        private string _name;
+        private string _revenue;
         #endregion
 
         #region Public Properties
@@ -86,6 +88,26 @@ namespace BusinessAnalyticsDashboard
                 OnPropertyChanged();
             }
         }
+
+        public string? Name
+        {
+            get => _name;
+            set
+            {
+                _name = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string? Revenue
+        {
+            get => _revenue;
+            set
+            {
+                _revenue = value;
+                OnPropertyChanged();
+            }
+        }
         #endregion
 
         #region Constructor
@@ -117,13 +139,14 @@ namespace BusinessAnalyticsDashboard
             {
                 new ProductData
                 {
-                    Name = "iPhone 13 Pro",
+                    Image = "mac.png",
+                    Name = "MacBook Pro Notebook Z0GP-0002",
                     Revenue = 1250000,
                     Growth = 15.5,
                     Rating = 4.8,
                     Attributes = new List<ProductAttributeData>
                     {
-                        new ProductAttributeData { Attribute = "Quality", Rating = 4.8 },
+                        new ProductAttributeData { Attribute = "Quality", Rating = 4.8, },
                         new ProductAttributeData { Attribute = "Price", Rating = 4.2 },
                         new ProductAttributeData { Attribute = "Features", Rating = 4.9 },
                         new ProductAttributeData { Attribute = "Design", Rating = 4.7 },
@@ -132,13 +155,14 @@ namespace BusinessAnalyticsDashboard
                 },
                 new ProductData
                 {
-                    Name = "MacBook Pro",
+                    Image = "watch.png",
+                    Name = "Apple Watch fk88, 1.78 inch HD, Blue ",
                     Revenue = 980000,
                     Growth = 12.3,
                     Rating = 4.7,
                     Attributes = new List<ProductAttributeData>
                     {
-                        new ProductAttributeData { Attribute = "Quality", Rating = 4.9 },
+                        new ProductAttributeData { Attribute = "Quality", Rating = 4.9, },
                         new ProductAttributeData { Attribute = "Price", Rating = 4.0 },
                         new ProductAttributeData { Attribute = "Features", Rating = 4.8 },
                         new ProductAttributeData { Attribute = "Design", Rating = 4.9 },
@@ -147,7 +171,8 @@ namespace BusinessAnalyticsDashboard
                 },
                 new ProductData
                 {
-                    Name = "AirPods Pro",
+                    Image = "iphone.png",
+                    Name = "iPhone 13 Pro Max 256GB Storage,White",
                     Revenue = 450000,
                     Growth = 18.7,
                     Rating = 4.6,
@@ -162,7 +187,8 @@ namespace BusinessAnalyticsDashboard
                 },
                 new ProductData
                 {
-                    Name = "iPad Air",
+                    Image = "earbuds.png",
+                    Name = "Apple AirPods (2nd Generation) ",
                     Revenue = 820000,
                     Growth = 14.2,
                     Rating = 4.5,
@@ -177,7 +203,8 @@ namespace BusinessAnalyticsDashboard
                 },
                 new ProductData
                 {
-                    Name = "Apple Watch",
+                    Image = "tab.png",
+                    Name = "Apple iPad Air 10.9\" 256GB in Starlight",
                     Revenue = 680000,
                     Growth = 16.8,
                     Rating = 4.4,
@@ -204,6 +231,8 @@ namespace BusinessAnalyticsDashboard
             if (TopProducts != null && TopProducts.Count > SelectedProductIndex)
             {
                 SelectedProductAttributes = TopProducts[SelectedProductIndex].Attributes;
+                Name = TopProducts[SelectedProductIndex].Name;
+                Revenue = TopProducts[SelectedProductIndex].Revenue.ToString();
                 UpdateDataForTimePeriod(); // Refresh sales data for selected product
             }
         }
@@ -243,6 +272,5 @@ namespace BusinessAnalyticsDashboard
             SalesTrend = trendData;
         }
         #endregion
-    }
-
+    }    
 }

@@ -21,7 +21,7 @@
 		<Nullable>enable</Nullable>
 		<MauiStrictXamlCompilation>true</MauiStrictXamlCompilation>
 		<!-- Display name -->
-		<ApplicationTitle>BusinessAnalyticsDashboard</ApplicationTitle>
+		<ApplicationTitle>Business Analytics Dashboard</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.businessanalyticsdashboard</ApplicationId>

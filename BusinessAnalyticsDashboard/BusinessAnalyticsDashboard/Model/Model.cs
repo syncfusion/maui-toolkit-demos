@@ -69,6 +69,7 @@ namespace BusinessAnalyticsDashboard
         public double Growth { get; set; }
         public double Rating { get; set; }
         public List<ProductAttributeData>? Attributes { get; set; }
+        public string? Image { get; set; }
     }
 
     public class ProductAttributeData

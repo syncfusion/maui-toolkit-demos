@@ -6,6 +6,14 @@
              x:DataType="local:TeamMetricsViewModel"
              x:Class="BusinessAnalyticsDashboard.TeamMetricsPage">
     <ScrollView Background="#F2F4F7">
+        <ScrollView.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <local:ChartColorResources/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </ScrollView.Resources>
+        
         <VerticalStackLayout Spacing="15">
             <VerticalStackLayout Padding="20,15,20,15" Spacing="20">
                 <!-- Search Box with TextInputLayout -->
@@ -151,37 +159,70 @@
                     Shadow="{Shadow Brush=#1018280F, Offset='6,6', Radius=6}">
                     <VerticalStackLayout Padding="15">
                         <Label Text="Team Performance" 
-                           FontSize="16" 
-                           FontAttributes="Bold" 
-                           Margin="0,0,0,10"/>
-                        <syncfusion:SfCartesianChart HeightRequest="250">
+                         FontSize="18" TextColor="#101828" FontAttributes="Bold" 
+                         Padding="20,0,20,16"/>
+
+                        <syncfusion:SfCartesianChart HeightRequest="{OnPlatform WinUI=350, MacCatalyst=500}" PaletteBrushes="{StaticResource PaletteBrushesLight4}">
+
                             <syncfusion:SfCartesianChart.Legend>
                                 <syncfusion:ChartLegend/>
                             </syncfusion:SfCartesianChart.Legend>
+
                             <syncfusion:SfCartesianChart.XAxes>
-                                <syncfusion:CategoryAxis>
+                                <syncfusion:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="False">
                                     <syncfusion:CategoryAxis.Title>
-                                        <syncfusion:ChartAxisTitle Text="Member"/>
+                                        <syncfusion:ChartAxisTitle Text="Member" FontSize="12" TextColor="#475467"/>
                                     </syncfusion:CategoryAxis.Title>
+                                    <syncfusion:CategoryAxis.LabelStyle>
+                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
+                                    </syncfusion:CategoryAxis.LabelStyle>
+                                    <syncfusion:CategoryAxis.MajorTickStyle>
+                                        <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
+                                    </syncfusion:CategoryAxis.MajorTickStyle>
                                 </syncfusion:CategoryAxis>
                             </syncfusion:SfCartesianChart.XAxes>
+
                             <syncfusion:SfCartesianChart.YAxes>
                                 <syncfusion:NumericalAxis>
                                     <syncfusion:NumericalAxis.Title>
-                                        <syncfusion:ChartAxisTitle Text="Tasks"/>
+                                        <syncfusion:ChartAxisTitle Text="Tasks" FontSize="12" TextColor="#475467"/>
                                     </syncfusion:NumericalAxis.Title>
+                                    <syncfusion:NumericalAxis.LabelStyle>
+                                        <syncfusion:ChartAxisLabelStyle TextColor="#475467" FontSize="12"/>
+                                    </syncfusion:NumericalAxis.LabelStyle>
+                                    <syncfusion:NumericalAxis.MajorTickStyle>
+                                        <syncfusion:ChartAxisTickStyle Stroke="Transparent" StrokeWidth="0"/>
+                                    </syncfusion:NumericalAxis.MajorTickStyle>
+                                    <syncfusion:NumericalAxis.AxisLineStyle>
+                                        <syncfusion:ChartLineStyle StrokeWidth="0" />
+                                    </syncfusion:NumericalAxis.AxisLineStyle>
                                 </syncfusion:NumericalAxis>
                             </syncfusion:SfCartesianChart.YAxes>
                             <syncfusion:SfCartesianChart.Series>
                                 <syncfusion:ColumnSeries ItemsSource="{Binding TasksCompleted}"
-                                              XBindingPath="Member"
-                                              YBindingPath="Count"
+                                              XBindingPath="Member" YBindingPath="Count"
                                               Label="Completed Tasks"
-                                              ShowDataLabels="True"/>
-                                <syncfusion:LineSeries ItemsSource="{Binding TasksInProgress}"
-                                            XBindingPath="Member"
-                                            YBindingPath="Count"
-                                            Label="In Progress"/>
+                                              ShowDataLabels="True">
+                                    <syncfusion:ColumnSeries.DataLabelSettings>
+                                        <syncfusion:CartesianDataLabelSettings LabelPlacement="Inner">
+                                            <syncfusion:CartesianDataLabelSettings.LabelStyle>
+                                                <syncfusion:ChartDataLabelStyle FontSize="12" TextColor="#101828"/>
+                                            </syncfusion:CartesianDataLabelSettings.LabelStyle>
+                                        </syncfusion:CartesianDataLabelSettings>
+                                    </syncfusion:ColumnSeries.DataLabelSettings>
+                                </syncfusion:ColumnSeries>
+
+                                <syncfusion:ColumnSeries ItemsSource="{Binding TasksInProgress}"
+                                            XBindingPath="Member" YBindingPath="Count" 
+                                            Label="In Progress" ShowDataLabels="True">
+                                    <syncfusion:ColumnSeries.DataLabelSettings>
+                                        <syncfusion:CartesianDataLabelSettings LabelPlacement="Inner">
+                                            <syncfusion:CartesianDataLabelSettings.LabelStyle>
+                                                <syncfusion:ChartDataLabelStyle FontSize="12" TextColor="#101828"/>
+                                            </syncfusion:CartesianDataLabelSettings.LabelStyle>
+                                        </syncfusion:CartesianDataLabelSettings>
+                                    </syncfusion:ColumnSeries.DataLabelSettings>
+                                </syncfusion:ColumnSeries>
                             </syncfusion:SfCartesianChart.Series>
                         </syncfusion:SfCartesianChart>
                     </VerticalStackLayout>

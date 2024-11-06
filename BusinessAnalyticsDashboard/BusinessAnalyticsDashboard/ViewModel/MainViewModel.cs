@@ -10,7 +10,7 @@ namespace BusinessAnalyticsDashboard
 {
     public class MainViewModel : BindableObject
     {
-        private string _currentPage = "Dashboard";
+        private string _currentPage = "Overview";
         private View? _currentPageContent;
         private readonly SfNavigationDrawer _navigationDrawer;
 
@@ -49,7 +49,7 @@ namespace BusinessAnalyticsDashboard
             CurrentPage = page;
             CurrentPageContent = page switch
             {
-                "Dashboard" => new DashboardPage(),
+                "Overview" => new DashboardPage(),
                 "Sales Analytics" => new SalesAnalyticsPage(),
                 "Customer Insights" => new CustomerInsightsPage(),
                 "Product Performance" => new ProductPerformancePage(),
