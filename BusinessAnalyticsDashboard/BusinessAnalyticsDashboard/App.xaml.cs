@@ -5,6 +5,7 @@
         public App()
         {
             InitializeComponent();
+            this.UserAppTheme = AppTheme.Light;
         }
 
         protected override Window CreateWindow(IActivationState? activationState)

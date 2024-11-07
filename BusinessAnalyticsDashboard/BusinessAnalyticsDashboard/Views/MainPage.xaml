@@ -38,7 +38,7 @@
                             <!-- Menu Items -->
                             <syncfusion:SfEffectsView RippleAnimationDuration="200" InitialRippleFactor="0.7" Padding="10,1,0,1"  SelectionBackground="#EAECF0"
                                                       HeightRequest="40">
-                                <Label Text="Dashboard" 
+                                <Label Text="Overview" 
                                    VerticalOptions="Center"/>
                                 <syncfusion:SfEffectsView.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding NavigateCommand}" 
