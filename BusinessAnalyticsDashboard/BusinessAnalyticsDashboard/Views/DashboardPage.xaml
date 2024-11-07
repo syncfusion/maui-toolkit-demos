@@ -130,7 +130,7 @@
                      FontAttributes="Bold" 
                         Padding="20,0,20,16"/>
 
-                    <syncfusion:SfCartesianChart SizeChanged="SfChart_SizeChanged">
+                    <syncfusion:SfCartesianChart HeightRequest="500">
 
                         <syncfusion:SfCartesianChart.XAxes>
                             <syncfusion:CategoryAxis ShowMajorGridLines="False" PlotOffsetStart="6" PlotOffsetEnd="6" >
@@ -194,7 +194,7 @@
                            FontAttributes="Bold" 
                            Padding="20,0,20,16"/>
 
-                    <syncfusion:SfCircularChart VerticalOptions="CenterAndExpand" SizeChanged="SfChart_SizeChanged">
+                    <syncfusion:SfCircularChart HeightRequest="500">
 
                         <syncfusion:SfCircularChart.Legend>
                             <syncfusion:ChartLegend Placement="Bottom">
